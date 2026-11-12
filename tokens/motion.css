@@ -1,0 +1,14 @@
+:root{
+  --ease-pour:cubic-bezier(.22,1,.36,1);--ease-swirl:cubic-bezier(.65,0,.35,1);--ease-pop:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:150ms;--dur-base:250ms;--dur-slow:450ms;--dur-reveal:800ms;--stagger:80ms;
+}
+@keyframes hbc-fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes hbc-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes hbc-spin{to{transform:rotate(360deg)}}
+@keyframes hbc-pour{0%,8%{height:6%}55%,80%{height:72%}100%{height:6%}}
+@keyframes hbc-bubble{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-170px) scale(1);opacity:0}}
+@keyframes hbc-foil{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes hbc-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.12)}66%{transform:translate(-30px,25px) scale(.92)}}
+@keyframes hbc-pulse{0%{box-shadow:0 0 0 0 rgba(200,147,90,.55)}100%{box-shadow:0 0 0 18px rgba(200,147,90,0)}}
+@keyframes hbc-float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

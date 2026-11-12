@@ -1,0 +1,14 @@
+:root{
+  /* Copper — crest rings */
+  --hbc-copper-50:#FBF3EA;--hbc-copper-100:#F4E2CC;--hbc-copper-200:#E8C7A1;--hbc-copper-300:#DCAB78;--hbc-copper-400:#D09C66;--hbc-copper-500:#C8935A;--hbc-copper-600:#A8703A;--hbc-copper-700:#84552B;--hbc-copper-800:#5E3C1F;
+  /* Hemp olive — wordmark & laurel */
+  --hbc-olive-50:#F3F5EA;--hbc-olive-100:#E2E8CC;--hbc-olive-200:#CDD7B1;--hbc-olive-300:#AEBD7F;--hbc-olive-400:#8E9E4F;--hbc-olive-500:#6F7D2B;--hbc-olive-600:#586422;--hbc-olive-700:#3A4218;--hbc-olive-800:#262B17;--hbc-olive-900:#1A1E0F;
+  /* Neutrals */
+  --hbc-white:#FFFDF8;--hbc-cream:#FAF6EE;--hbc-paper:#F3ECDD;--hbc-line:#E6DDC9;--hbc-stone:#C9BFA8;--hbc-muted:#8B8775;--hbc-soft:#6B6754;--hbc-body:#4A473D;--hbc-ink:#23261A;
+  /* Semantic */
+  --hbc-success:#6F7D2B;--hbc-warning:#D9A23A;--hbc-error:#B5452E;--hbc-info:#5C7A7A;
+  /* Aliases */
+  --bg-page:var(--hbc-cream);--bg-card:var(--hbc-white);--bg-muted:var(--hbc-paper);--bg-inverse:var(--hbc-ink);--bg-footer:var(--hbc-olive-800);
+  --text-strong:var(--hbc-ink);--text-body:var(--hbc-body);--text-muted:var(--hbc-soft);--text-inverse:var(--hbc-cream);--text-accent:var(--hbc-copper-600);
+  --border-default:var(--hbc-line);--accent:var(--hbc-copper-500);--brand:var(--hbc-olive-500);--sage:var(--hbc-olive-200);
+}

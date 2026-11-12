@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --font-display:'Bebas Neue',Impact,sans-serif;--font-body:'Manrope',system-ui,sans-serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --display-xl:400 168px/.84 var(--font-display);--display-l:400 112px/.85 var(--font-display);
+  --h1:400 72px/.9 var(--font-display);--h2:400 52px/.92 var(--font-display);--h3:400 36px/1 var(--font-display);
+  --title:800 20px/1.3 var(--font-body);--body-l:400 19px/1.55 var(--font-body);--body:400 16px/1.6 var(--font-body);--caption:500 13px/1.5 var(--font-body);
+  --eyebrow-size:12px;--eyebrow-weight:800;--eyebrow-tracking:.16em;--button-size:22px;--button-tracking:.06em;
+}

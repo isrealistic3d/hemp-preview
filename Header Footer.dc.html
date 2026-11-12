@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>body{margin:0;background:#FAF6EE;-webkit-font-smoothing:antialiased}a{color:#6F7D2B;text-decoration:none}a:hover{color:#A8703A}input::placeholder{color:#8B8775}input:focus{outline:none}</style>
+</helmet>
+
+<div style="font-family:'Manrope',sans-serif;color:#23261A;background:#FAF6EE;min-height:100vh">
+
+<sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
+<div style="background:#23261A;color:#F3ECDD;font-size:13px;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:9px 28px;letter-spacing:.01em">
+<span style="display:{{ deskDisplay }};opacity:.8">888-420-3021</span>
+<span style="flex:1;text-align:center;display:flex;justify-content:center;gap:10px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#C8935A;display:inline-block"></span>{{ announcement }}</span>
+<span style="display:{{ deskDisplay }};opacity:.8">Wholesale login</span>
+</div>
+</sc-if>
+
+<header style="position:sticky;top:0;z-index:50;padding:{{ barPad }};transition:padding .25s ease" onMouseLeave="{{ closeMenu }}">
+<div style="position:relative;background:{{ barBg }};backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid #E6DDC9;border-radius:{{ barRadius }};box-shadow:{{ barShadow }};transition:all .25s ease">
+<div style="display:flex;align-items:center;gap:28px;padding:{{ barInnerPad }};transition:padding .25s ease">
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ toggleMobile }}" style="border:1px solid #DCD2BB;background:transparent;border-radius:12px;height:44px;padding:0 14px;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;color:#23261A;cursor:pointer">{{ mobileLabel }}</button>
+</sc-if>
+
+<a href="#" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/logo.webp" alt="Hemp Beverage Company" style="height:{{ logoH }};display:block;transition:height .25s ease"></a>
+
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<nav style="display:flex;align-items:center;gap:2px">
+<button onMouseEnter="{{ openMenu }}" onClick="{{ openMenu }}" style="border:none;cursor:pointer;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border-radius:999px;background:{{ shopBg }};color:{{ shopColor }};display:flex;gap:8px;align-items:center;transition:background .15s">Shop <span style="font-size:10px;transform:{{ chevron }};transition:transform .2s;display:inline-block">▼</span></button>
+<sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="5">
+<a href="#" onMouseEnter="{{ closeMenu }}" style="font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:11px 16px;border-radius:999px;color:#23261A" style-hover="background:#F0E8D6;color:#23261A">{{ l }}</a>
+</sc-for>
+</nav>
+</sc-if>
+
+<div style="flex:1"></div>
+
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<label style="display:flex;align-items:center;gap:10px;background:#F3ECDD;border:1px solid #E6DDC9;border-radius:999px;padding:0 6px 0 18px;height:44px;width:260px;box-sizing:border-box">
+<span style="width:11px;height:11px;border:2px solid #6B6754;border-radius:50%;flex-shrink:0"></span>
+<input placeholder="Search drinks, recipes…" style="border:none;background:transparent;font-family:'Manrope',sans-serif;font-size:14px;color:#23261A;flex:1;min-width:0">
+<span style="font-size:11px;font-weight:700;color:#6B6754;background:#FAF6EE;border:1px solid #E1D7C1;border-radius:999px;padding:5px 9px">⌘K</span>
+</label>
+<a href="#" style="font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#23261A;padding:11px 6px">Log in</a>
+</sc-if>
+
+<button onClick="{{ bumpCart }}" style="border:none;cursor:pointer;height:46px;padding:0 8px 0 20px;border-radius:999px;background:#23261A;color:#FAF6EE;display:flex;align-items:center;gap:12px;font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.06em" style-hover="background:#3A4218">Cart <span style="background:#C8935A;color:#23261A;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;min-width:30px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center">{{ cart }}</span></button>
+</div>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position:absolute;left:-1px;right:-1px;top:calc(100% + 10px);background:#FAF6EE;border:1px solid #E6DDC9;border-radius:22px;box-shadow:0 30px 60px -20px rgba(35,38,26,.28);padding:14px;display:grid;grid-template-columns:270px minmax(0,1fr) 300px;gap:14px">
+<div style="display:flex;flex-direction:column;gap:4px;padding:6px">
+<div style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775;padding:8px 14px">Categories</div>
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="3">
+<button onMouseEnter="{{ c.select }}" onClick="{{ c.select }}" style="text-align:left;border:none;cursor:pointer;border-radius:14px;padding:14px;background:{{ c.bg }};color:{{ c.fg }};display:flex;flex-direction:column;gap:3px;transition:background .15s">
+<span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.02em;line-height:1;display:flex;justify-content:space-between">{{ c.name }}<span style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;opacity:.7">{{ c.count }}</span></span>
+<span style="font-family:'Manrope',sans-serif;font-size:13px;opacity:.78;line-height:1.4">{{ c.desc }}</span>
+</button>
+</sc-for>
+<a href="#" style="margin-top:auto;font-size:13px;font-weight:700;color:#23261A;padding:14px;display:flex;justify-content:space-between;border-top:1px solid #E6DDC9">Shop all products <span>→</span></a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-content:start">
+<sc-for list="{{ items }}" as="p" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:10px;background:#F3ECDD;border-radius:16px;padding:10px 10px 14px;cursor:pointer;transition:transform .2s" style-hover="transform:translateY(-3px)">
+<div style="position:relative;background:#FFFDF8;border-radius:11px;aspect-ratio:1/1.05;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<img src="{{ p.img }}" alt="{{ p.name }}" style="max-width:86%;max-height:88%;object-fit:contain">
+<sc-if value="{{ p.tag }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:8px;left:8px;background:#6F7D2B;color:#FAF6EE;font-size:11px;font-weight:800;letter-spacing:.06em;padding:4px 8px;border-radius:999px">{{ p.tag }}</span></sc-if>
+</div>
+<div style="font-size:14px;font-weight:700;line-height:1.3;padding:0 4px;min-height:36px">{{ p.name }}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:0 4px">
+<span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.02em">{{ p.price }} <span style="font-family:'Manrope',sans-serif;font-size:12px;color:#8B8775;text-decoration:line-through;letter-spacing:0">{{ p.was }}</span></span>
+<button onClick="{{ bumpCart }}" style="border:none;cursor:pointer;width:32px;height:32px;border-radius:50%;background:#23261A;color:#FAF6EE;font-size:18px;line-height:1" style-hover="background:#C8935A;color:#23261A">+</button>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="background:#3A4218;color:#FAF6EE;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+<div style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#CDD7B1">New to THC drinks?</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:96px;line-height:.82;color:#C8935A">15 MIN</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;letter-spacing:.02em">Average onset. Start with 5–10mg.</div>
+<div style="font-size:14px;line-height:1.55;color:#E4E2D0">Nano-emulsified for cocktail-like timing that wears off in about 4 hours.</div>
+<a href="#" style="margin-top:auto;align-self:flex-start;background:#FAF6EE;color:#23261A;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:13px 18px;border-radius:999px">Find your perfect dose →</a>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+<div style="border-top:1px solid #E6DDC9;padding:10px 14px 18px;display:flex;flex-direction:column;gap:2px">
+<label style="display:flex;align-items:center;gap:10px;background:#F3ECDD;border-radius:14px;padding:0 16px;height:48px;margin:6px 0 10px"><span style="width:11px;height:11px;border:2px solid #6B6754;border-radius:50%"></span><input placeholder="Search drinks, recipes…" style="border:none;background:transparent;font-family:'Manrope',sans-serif;font-size:15px;flex:1;min-width:0"></label>
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="3">
+<a href="#" style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#23261A;padding:10px 4px;display:flex;justify-content:space-between;border-bottom:1px solid #EDE5D3">{{ c.name }}<span style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#8B8775;align-self:center">{{ c.count }}</span></a>
+</sc-for>
+<sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="5">
+<a href="#" style="font-size:15px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#23261A;padding:14px 4px">{{ l }}</a>
+</sc-for>
+</div>
+</sc-if>
+
+</div>
+</header>
+
+<main>
+<section style="position:relative;margin:{{ heroMargin }};border-radius:{{ heroRadius }};overflow:hidden;min-height:620px;display:flex;align-items:flex-end;background:#23261A">
+<img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,38,26,0) 30%,rgba(35,38,26,.82) 100%)"></div>
+<div style="position:relative;padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;gap:18px;max-width:900px">
+<div style="font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#CDD7B1">Hemp-derived Delta-9 · Alcohol-free</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,11vw,168px);line-height:.84;color:#FAF6EE">Sip smarter.<br><span style="color:#C8935A">Feel better.</span></div>
+<div style="font-size:19px;color:#F3ECDD;max-width:520px;line-height:1.5">Upgrade your unwind without the hangovers.</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#" style="background:#C8935A;color:#23261A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;padding:14px 26px;border-radius:999px">Shop Mocktail Creator</a><a href="#" style="border:1.5px solid #FAF6EE;color:#FAF6EE;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;padding:13px 26px;border-radius:999px">Find your dose</a></div>
+</div>
+</section>
+<div style="padding:56px 28px;text-align:center;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8B8775">Page content goes here · scroll to see the header compact</div>
+</main>
+
+<footer style="background:#262B17;color:#FAF6EE;margin:{{ footMargin }};border-radius:{{ footRadius }};overflow:hidden">
+<div style="padding:40px clamp(24px,5vw,64px);display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between;border-bottom:1px solid #3B4224">
+<div style="display:flex;flex-direction:column;gap:6px;min-width:260px;flex:1 1 360px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#CDD7B1">Join the revolution</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1;letter-spacing:.01em">Recipes, dosing tips &amp; first dibs on new drops.</div>
+</div>
+<div style="flex:1 1 380px;max-width:520px;display:flex;flex-direction:column;gap:8px">
+<sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:6px;background:#FAF6EE;border-radius:999px;padding:5px 5px 5px 20px">
+<input placeholder="you@email.com" value="{{ email }}" onChange="{{ setEmail }}" style="border:none;background:transparent;font-family:'Manrope',sans-serif;font-size:15px;color:#23261A;flex:1;min-width:0">
+<button onClick="{{ subscribe }}" style="border:none;cursor:pointer;background:#C8935A;color:#23261A;border-radius:999px;padding:0 22px;height:44px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em" style-hover="background:#D9A772">Subscribe</button>
+</div>
+</sc-if>
+<sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+<div style="background:#6F7D2B;color:#FAF6EE;border-radius:999px;padding:15px 22px;font-weight:700;font-size:15px">Cheers! You're on the list.</div>
+</sc-if>
+<div style="font-size:12px;color:#B9B7A2;padding-left:20px">No spam. Unsubscribe anytime.</div>
+</div>
+</div>
+<div style="padding:48px clamp(24px,5vw,64px) 8px;display:grid;grid-template-columns:{{ footGrid }};gap:40px 32px">
+<sc-for list="{{ footCols }}" as="col" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#C8935A">{{ col.title }}</div>
+<sc-for list="{{ col.links }}" as="lk" hint-placeholder-count="4"><a href="#" style="font-size:15px;color:#E4E2D0" style-hover="color:#C8935A">{{ lk }}</a></sc-for>
+</div>
+</sc-for>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#C8935A">Say hi</div>
+<a href="#" style="font-size:15px;font-weight:700;color:#FAF6EE">888-420-3021</a>
+<a href="#" style="font-size:15px;font-weight:700;color:#FAF6EE">Support@hempbevco.com</a>
+<span style="font-size:14px;color:#B9B7A2;line-height:1.55">10645 N Tatum Blvd., Suite C200-432, Phoenix, AZ 85028</span>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px">
+<sc-for list="{{ socials }}" as="s" hint-placeholder-count="5"><a href="#" style="font-size:12px;font-weight:700;color:#FAF6EE;border:1px solid #4A5230;border-radius:999px;padding:7px 11px" style-hover="background:#C8935A;color:#23261A;border-color:#C8935A">{{ s }}</a></sc-for>
+</div>
+</div>
+</div>
+<div style="padding:24px clamp(24px,5vw,64px) 0;font-family:'Bebas Neue',sans-serif;font-size:{{ signSize }};line-height:.8;white-space:nowrap;color:#FAF6EE;margin-bottom:-.06em">Crafted for good vibes <span style="color:#C8935A">only.</span></div>
+<div style="margin:0 clamp(24px,5vw,64px);padding:22px 0 26px;border-top:1px solid #3B4224;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 32px;font-size:12px;color:#B9B7A2;line-height:1.55">
+<span style="flex:1 1 480px;max-width:720px;text-wrap:pretty">21+ only. Hemp-derived Delta-9 THC, ≤0.3% by dry weight, 2018 Farm Bill compliant. Not sold in AK &amp; ID. May cause a positive drug test. Not evaluated by the FDA.</span>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><span>© 2026 Hemp Bev Co</span><a href="#" style="color:#B9B7A2">Privacy</a><a href="#" style="color:#B9B7A2">Terms</a><a href="#" style="color:#B9B7A2">Refunds</a><a href="#" style="color:#B9B7A2">Disclaimer</a><button onClick="{{ toTop }}" style="border:1px solid #4A5230;background:transparent;color:#FAF6EE;border-radius:999px;padding:7px 13px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;cursor:pointer" style-hover="background:#FAF6EE;color:#23261A">Top ↑</button></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headerStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;floating&quot;,&quot;full-width&quot;],&quot;default&quot;:&quot;floating&quot;,&quot;tsType&quot;:&quot;'floating'|'full-width'&quot;},&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, cat: 0, cart: 0, scrolled: false, w: window.innerWidth, mobileOpen: false, ann: 0, email: '', subscribed: false };
+  componentDidMount() {
+    this.onScroll = () => { const s = window.scrollY > 40; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onResize);
+    this.t = setInterval(() => this.setState(s => ({ ann: (s.ann + 1) % 3 })), 4000);
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); clearInterval(this.t); }
+  renderVals() {
+    const S = this.state, floating = (this.props.headerStyle ?? 'floating') === 'floating';
+    const mobile = S.w < 1080, sc = S.scrolled;
+    const catData = [
+      { name: 'Mocktail Creator', desc: 'Liquid THC that turns any drink into a cannabis beverage', items: [
+        { name: 'Mocktail Creator · 100mg', price: '$28.95', img: 'assets/product-mocktail-100mg.png', tag: 'Best seller' },
+        { name: 'Mocktail Creator · 50mg', price: '$24.95', img: 'assets/product-mocktail-50mg.png' },
+        { name: 'Mocktail Creator Pump · 2000mg', price: '$398', img: 'assets/product-pump.png' },
+        { name: 'MaryRita · Party 4 Pack', price: '$19.99', was: '$32.99', img: 'assets/product-maryrita-4pack.png', tag: '−39%' }] },
+      { name: 'Non-Alcoholic Wine', desc: 'Rosé & Chardonnay, with or without 50mg THC', items: [
+        { name: 'Rosé · 50mg Liquid THC', price: '$28.98', img: 'assets/product-rose-thc.png', tag: 'THC' },
+        { name: 'Chardonnay · 50mg Liquid THC', price: '$28.98', img: 'assets/product-chardonnay-thc.png', tag: 'THC' },
+        { name: 'Rosé Non-Alcoholic Wine', price: '$19.98', img: 'assets/product-rose.png' },
+        { name: 'Chardonnay Non-Alcoholic Wine', price: '$19.98', img: 'assets/product-chardonnay.png' }] },
+      { name: 'Wellness', desc: 'Recovery & mood support from hemp', items: [
+        { name: 're:LEAF Muscle Support', price: '$28.95', img: 'assets/products/re-leaf-muscle-support--2--Screenshot2025-09-07at10.42.43AM.png' },
+        { name: 'SwāeZ Calm Island Iced Tea · 4-Pack', price: '$19.99', img: 'assets/products/swaez-mood-enhancer-calm-island-iced-tea--1--01_hero_white.jpg', tag: 'New' }] }
+    ];
+    const anns = ['Free shipping on retail orders $50+', 'Every batch third-party lab tested', 'Feel it in ~15 minutes. No hangover.'];
+    return {
+      showAnnouncement: this.props.showAnnouncement ?? true,
+      announcement: anns[S.ann],
+      deskDisplay: mobile ? 'none' : 'inline',
+      isMobile: mobile, isDesktop: !mobile,
+      barPad: floating ? (sc ? '8px 16px' : '14px 20px') : '0',
+      barRadius: floating ? '22px' : '0',
+      barBg: sc ? 'rgba(250,246,238,.86)' : '#FAF6EE',
+      barShadow: sc || S.menuOpen ? '0 12px 30px -16px rgba(35,38,26,.35)' : '0 0 0 rgba(0,0,0,0)',
+      barInnerPad: sc ? '8px 10px 8px 18px' : '12px 12px 12px 22px',
+      logoH: sc ? '42px' : '56px',
+      heroMargin: floating ? '0 20px' : '0',
+      heroRadius: floating ? '28px' : '0',
+      footMargin: floating ? '0 20px 20px' : '0',
+      footRadius: floating ? '28px' : '0',
+      navLinks: ['Perfect Dose', 'Recipes', 'Lab Tests', 'Reviews', 'Contact'],
+      menuOpen: S.menuOpen && !mobile,
+      shopBg: S.menuOpen ? '#23261A' : 'transparent', shopColor: S.menuOpen ? '#FAF6EE' : '#23261A',
+      chevron: S.menuOpen ? 'rotate(180deg)' : 'none',
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      cats: catData.map((c, i) => ({ name: c.name, desc: c.desc, count: c.items.length + ' items', bg: i === S.cat ? '#23261A' : 'transparent', fg: i === S.cat ? '#FAF6EE' : '#23261A', select: () => this.setState({ cat: i }) })),
+      items: catData[S.cat].items.map(p => ({ was: '', tag: '', ...p })),
+      cart: S.cart,
+      bumpCart: () => this.setState(s => ({ cart: s.cart + 1 })),
+      mobileOpen: S.mobileOpen && mobile,
+      mobileLabel: S.mobileOpen ? 'CLOSE' : 'MENU',
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+      email: S.email,
+      setEmail: e => this.setState({ email: e.target.value }),
+      subscribe: () => this.setState({ subscribed: true }),
+      subscribed: S.subscribed, notSubscribed: !S.subscribed,
+      socials: ['Instagram', 'TikTok', 'YouTube', 'Facebook', 'X'],
+      footCols: [
+        { title: 'Shop', links: ['Mocktail Creator', 'Non-Alcoholic Wine', 're:Leaf', 'All products'] },
+        { title: 'Learn', links: ['Perfect Dose', 'Recipes', 'Lab Tests (COA)', 'FAQ'] },
+        { title: 'Company', links: ['Testimonials', 'In the News', 'Contact', 'Shipping & Returns'] },
+        { title: 'Wholesale', links: ['Wholesale login', 'Onboarding info'] }
+      ],
+      footGrid: S.w >= 1000 ? 'repeat(5,minmax(0,1fr))' : S.w >= 640 ? 'repeat(3,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))',
+      signSize: Math.round((S.w - (floating ? 40 : 0) - 2 * Math.min(64, Math.max(24, S.w * 0.05))) / 10.4) + 'px',
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' })
+    };
+  }
+}
+</script>
+</body>
+</html>

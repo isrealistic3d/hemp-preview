@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#E9E3D6;-webkit-font-smoothing:antialiased}
+a{color:#6F7D2B;text-decoration:none}a:hover{color:#A8703A}
+@keyframes hbc-spin{to{transform:rotate(360deg)}}
+@keyframes hbc-float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+@keyframes hbc-bubble{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-420px) scale(1);opacity:0}}
+@keyframes hbc-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.12)}66%{transform:translate(-40px,30px) scale(.92)}}
+@keyframes hbc-fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes hbc-toast{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+</style>
+</helmet>
+
+<div style="padding:88px 88px 160px;display:flex;flex-direction:column;gap:120px;font-family:'Manrope',sans-serif;color:#23261A;min-width:1616px">
+
+<div style="display:flex;flex-direction:column;gap:12px;max-width:1000px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;color:#84552B">HEMP BEVERAGE COMPANY · HOME PAGE EXPLORATIONS</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:120px;line-height:.85">Heroes &amp; product cards</div>
+<div style="font-size:18px;line-height:1.55;color:#4A473D;max-width:760px">Five hero directions (<a href="#hero-a">A</a>–<a href="#hero-e">E</a>) and six product card styles (<a href="#card-1">1</a>–<a href="#card-6">6</a>). Everything is interactive: try wishlist, compare, quick view, add to cart and the drink picker in Hero E.</div>
+</div>
+
+<!-- HEROES -->
+<section data-screen-label="Heroes" style="display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #D6CCB6;padding-bottom:20px"><div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.9">Hero sections</div><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#6B6754">5 DIRECTIONS · 1440 × 820</div></div>
+
+<!-- HERO A -->
+<div id="hero-a" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:14px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:22px;background:#23261A;color:#FAF6EE;padding:6px 14px;border-radius:999px;letter-spacing:.06em">Hero A</span><span style="font-weight:800;font-size:18px">Golden-hour lifestyle</span><span style="font-size:15px;color:#4A473D">· Full-bleed social photo, huge type, a proof strip and a rotating crest badge. Sells the feeling first.</span></div>
+<div style="width:1440px;height:820px;position:relative;border-radius:28px;overflow:hidden;background:#23261A">
+<img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,38,26,.15) 0%,rgba(35,38,26,0) 30%,rgba(35,38,26,.88) 100%)"></div>
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(35,38,26,.55) 0%,rgba(35,38,26,0) 55%)"></div>
+<div style="position:absolute;left:72px;bottom:150px;display:flex;flex-direction:column;gap:22px;max-width:860px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:rgba(250,246,238,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(250,246,238,.3);color:#FAF6EE;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;display:flex;gap:8px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#CDD7B1"></span>Hemp-derived Delta-9 · Alcohol-free</span></div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:184px;line-height:.82;color:#FAF6EE">Sip smarter.<br><span style="color:#C8935A">Feel better.</span></div>
+<div style="font-size:20px;line-height:1.5;color:#F3ECDD;max-width:520px">Upgrade your unwind without the hangovers. Fast-acting liquid THC that turns any drink into a good time.</div>
+<div style="display:flex;gap:12px">
+<a href="#" style="display:flex;gap:10px;align-items:center;background:#C8935A;color:#23261A;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;padding:0 28px;height:60px;border-radius:999px" style-hover="background:#D9A772;color:#23261A">Shop Mocktail Creator<span style="width:20px;height:20px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center/contain no-repeat"></span></a>
+<a href="#" style="display:flex;align-items:center;border:1.5px solid #FAF6EE;color:#FAF6EE;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;padding:0 28px;height:60px;border-radius:999px" style-hover="background:#FAF6EE;color:#23261A">Find your dose</a>
+</div>
+</div>
+<div style="position:absolute;right:72px;top:72px;width:190px;height:190px">{{ badge }}</div>
+<div style="position:absolute;left:24px;right:24px;bottom:24px;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(250,246,238,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(250,246,238,.22);border-radius:20px;color:#FAF6EE">
+<div style="padding:18px 26px;display:flex;gap:14px;align-items:center;border-right:1px solid rgba(250,246,238,.18)"><span style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#C8935A">15 MIN</span><span style="font-size:14px;line-height:1.35">Average onset,<br>like a cocktail</span></div>
+<div style="padding:18px 26px;display:flex;gap:14px;align-items:center;border-right:1px solid rgba(250,246,238,.18)"><span style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#C8935A">0</span><span style="font-size:14px;line-height:1.35">Calories, alcohol<br>or hangovers</span></div>
+<div style="padding:18px 26px;display:flex;gap:14px;align-items:center;border-right:1px solid rgba(250,246,238,.18)"><span style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#C8935A">≤0.3%</span><span style="font-size:14px;line-height:1.35">Federally legal<br>2018 Farm Bill</span></div>
+<div style="padding:18px 26px;display:flex;gap:14px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#C8935A">4.8★</span><span style="font-size:14px;line-height:1.35">140 verified<br>reviews</span></div>
+</div>
+</div>
+</div>
+
+<!-- HERO B -->
+<div id="hero-b" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:14px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:22px;background:#23261A;color:#FAF6EE;padding:6px 14px;border-radius:999px;letter-spacing:.06em">Hero B</span><span style="font-weight:800;font-size:18px">Split product spotlight</span><span style="font-size:15px;color:#4A473D">· Clear copy and benefits on the left, the hero product floating in a fizzing copper panel on the right. Conversion-first.</span></div>
+<div style="width:1440px;height:820px;display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#FAF6EE;border-radius:28px;padding:16px;box-sizing:border-box">
+<div style="padding:56px 48px 48px 56px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;gap:8px;align-items:center;font-size:14px;font-weight:700"><span style="color:#C8935A;letter-spacing:2px">★★★★★</span>Rated 4.8 by 140+ happy sippers</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#A8703A">Mocktail Creator · Liquid THC</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:132px;line-height:.84">Make <span style="color:#6F7D2B">any</span> drink a cannabis beverage.</div>
+<div style="font-size:19px;line-height:1.55;color:#4A473D;max-width:520px">A few drops of tasteless, water-soluble THC into your mocktail, soda or non-alcoholic wine. You'll feel it in about 15 minutes, and there's no hangover.</div>
+<div style="display:flex;gap:12px;align-items:center">
+<a href="#" style="display:flex;gap:10px;align-items:center;background:#23261A;color:#FAF6EE;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;padding:0 28px;height:60px;border-radius:999px" style-hover="background:#3A4218;color:#FAF6EE"><span style="width:20px;height:20px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add to cart · $28.95</a>
+<a href="#" style="font-weight:800;font-size:15px;color:#23261A;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#C8935A;text-decoration-thickness:2px">How it works</a>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+<div style="background:#F3ECDD;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px"><span style="width:22px;height:22px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/timer.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/timer.svg) center/contain no-repeat"></span><span style="font-weight:800;font-size:15px">Fast acting</span><span style="font-size:13px;color:#6B6754">Feel it in about 15 minutes</span></div>
+<div style="background:#F3ECDD;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px"><span style="width:22px;height:22px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/droplets.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/droplets.svg) center/contain no-repeat"></span><span style="font-weight:800;font-size:15px">Neutral taste</span><span style="font-size:13px;color:#6B6754">No bitterness</span></div>
+<div style="background:#F3ECDD;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px"><span style="width:22px;height:22px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/flask-conical.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/flask-conical.svg) center/contain no-repeat"></span><span style="font-weight:800;font-size:15px">Lab tested</span><span style="font-size:13px;color:#6B6754">Every single batch</span></div>
+</div>
+</div>
+<div style="position:relative;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,#F4E2CC 0%,#DCAB78 55%,#A8703A 100%);display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;inset:0;background:repeating-radial-gradient(circle at 50% 55%,transparent 0 60px,rgba(250,246,238,.22) 60px 62px)"></div>
+{{ bubblesB }}
+<div style="position:relative;width:460px;height:560px;display:flex;align-items:center;justify-content:center">{{ floatB }}</div>
+<div style="position:absolute;left:32px;top:32px;background:#FAF6EE;border-radius:16px;padding:14px 18px;display:flex;flex-direction:column;gap:2px;box-shadow:0 18px 40px -18px rgba(35,38,26,.5)"><span style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#8B8775">PER BOTTLE</span><span style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1">100MG · 20 servings</span></div>
+<div style="position:absolute;right:32px;bottom:32px;background:#23261A;color:#FAF6EE;border-radius:999px;padding:12px 20px;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em">From <span style="color:#C8935A">$24.95</span></div>
+</div>
+</div>
+</div>
+
+<!-- HERO C -->
+<div id="hero-c" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:14px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:22px;background:#23261A;color:#FAF6EE;padding:6px 14px;border-radius:999px;letter-spacing:.06em">Hero C</span><span style="font-weight:800;font-size:18px">Night pour, center stage</span><span style="font-size:15px;color:#4A473D">· Dark, premium and cinematic. Giant outlined type behind a glowing product, with callouts orbiting it.</span></div>
+<div style="width:1440px;height:820px;position:relative;border-radius:28px;overflow:hidden;background:radial-gradient(80% 100% at 50% 0%,#3A4218 0%,#23261A 70%);color:#FAF6EE">
+{{ meshC }}
+<div style="position:absolute;inset:0;opacity:.14;background-image:radial-gradient(#CDD7B1 1.2px,transparent 1.5px);background-size:24px 24px"></div>
+<div style="position:absolute;left:0;right:0;top:120px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:330px;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(200,147,90,.55);white-space:nowrap">NO HANGOVER</div>
+<div style="position:absolute;left:0;right:0;top:384px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:330px;line-height:.8;color:#C8935A;white-space:nowrap;opacity:.95">NO HANGOVER</div>
+<div style="position:absolute;left:50%;top:90px;transform:translateX(-50%);width:420px;height:620px;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(250,246,238,.9),rgba(250,246,238,0))"></div>
+<img src="assets/product-mocktail-100mg.png" alt="Cannabis Mocktail Creator" style="position:relative;height:560px;mix-blend-mode:normal;filter:drop-shadow(0 40px 40px rgba(0,0,0,.45));border-radius:18px">
+</div>
+<div style="position:absolute;left:72px;top:64px;display:flex;flex-direction:column;gap:10px;max-width:340px"><div style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#CDD7B1">Crafted for good vibes only</div><div style="font-size:17px;line-height:1.55;color:#E4E2D0">The relaxed buzz of a cocktail, without the alcohol, the calories or the next-day drag.</div></div>
+<div style="position:absolute;right:72px;top:64px;display:flex;gap:8px"><span style="border:1px solid rgba(250,246,238,.3);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700">Lab tested</span><span style="border:1px solid rgba(250,246,238,.3);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700">Farm Bill legal</span></div>
+<div style="position:absolute;left:180px;top:300px;display:flex;align-items:center;gap:12px"><span style="background:#FAF6EE;color:#23261A;border-radius:14px;padding:12px 16px;font-weight:800;font-size:15px">15-minute onset</span><span style="width:120px;height:1.5px;background:rgba(250,246,238,.6)"></span><span style="width:10px;height:10px;border-radius:50%;background:#FAF6EE"></span></div>
+<div style="position:absolute;right:170px;top:440px;display:flex;align-items:center;gap:12px"><span style="width:10px;height:10px;border-radius:50%;background:#FAF6EE"></span><span style="width:120px;height:1.5px;background:rgba(250,246,238,.6)"></span><span style="background:#FAF6EE;color:#23261A;border-radius:14px;padding:12px 16px;font-weight:800;font-size:15px">400% more bioavailable</span></div>
+<div style="position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;align-items:flex-end">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1">Cannabis Mocktail Creator</span><span style="font-size:15px;color:#CDD7B1">100mg Liquid THC · 20 × 5mg servings</span></div>
+<div style="display:flex;gap:12px">
+<a href="#" style="display:flex;align-items:center;border:1.5px solid #FAF6EE;color:#FAF6EE;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;padding:0 26px;height:58px;border-radius:999px" style-hover="background:#FAF6EE;color:#23261A">Explore wines</a>
+<a href="#" style="display:flex;gap:10px;align-items:center;background:#C8935A;color:#23261A;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;padding:0 26px;height:58px;border-radius:999px" style-hover="background:#D9A772;color:#23261A"><span style="width:20px;height:20px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Shop now · $28.95</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- HERO D -->
+<div id="hero-d" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:14px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:22px;background:#23261A;color:#FAF6EE;padding:6px 14px;border-radius:999px;letter-spacing:.06em">Hero D</span><span style="font-weight:800;font-size:18px">Bento showcase</span><span style="font-size:15px;color:#4A473D">· A modular grid that shows the whole range, the dose promise and social proof in one glance. Modern DTC style.</span></div>
+<div style="width:1440px;height:820px;display:grid;grid-template-columns:1.55fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;background:#FAF6EE;border-radius:28px;padding:14px;box-sizing:border-box">
+<div style="grid-row:span 2;position:relative;border-radius:22px;overflow:hidden;background:#23261A">
+<img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,38,26,0) 25%,rgba(35,38,26,.9) 100%)"></div>
+<div style="position:absolute;left:44px;right:44px;bottom:44px;display:flex;flex-direction:column;gap:20px">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:128px;line-height:.82;color:#FAF6EE">Sip smarter.<br><span style="color:#C8935A">Feel better.</span></div>
+<div style="font-size:18px;color:#F3ECDD;max-width:440px;line-height:1.5">Alcohol-free drinks with fast-acting hemp THC. Upgrade your unwind.</div>
+<div style="display:flex;gap:10px"><a href="#" style="display:flex;align-items:center;background:#C8935A;color:#23261A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;padding:0 26px;height:56px;border-radius:999px">Shop all drinks</a><a href="#" style="display:flex;align-items:center;background:rgba(250,246,238,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#FAF6EE;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;padding:0 26px;height:56px;border-radius:999px;border:1px solid rgba(250,246,238,.3)">Watch the story</a></div>
+</div>
+</div>
+<a href="#" style="position:relative;border-radius:22px;overflow:hidden;background:#E2E8CC;display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#23261A" style-hover="color:#23261A">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1"><div><div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#3A4218">BEST SELLER</div><div style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:.95;margin-top:4px">Mocktail<br>Creator</div></div><span style="width:44px;height:44px;border-radius:50%;background:#23261A;display:flex;align-items:center;justify-content:center"><span style="width:18px;height:18px;display:inline-block;background:#FAF6EE;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-up-right.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-up-right.svg) center/contain no-repeat"></span></span></div>
+<img src="assets/product-mocktail-100mg.png" alt="" style="position:absolute;right:-10px;bottom:-30px;height:250px;mix-blend-mode:multiply">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:30px;position:relative">From $24.95</div>
+</a>
+<a href="#" style="position:relative;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#FAF6EE,#F4D3C4 50%,#E8A994);display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#23261A" style-hover="color:#23261A">
+<div style="position:relative;z-index:1"><div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#84552B">ALCOHOL REMOVED</div><div style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:.95;margin-top:4px">Non-alcoholic<br>wine</div></div>
+<img src="assets/product-rose-thc.png" alt="" style="position:absolute;right:-40px;bottom:-40px;height:300px;mix-blend-mode:multiply">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:30px;position:relative">From $19.98</div>
+</a>
+<div style="border-radius:22px;background:#23261A;color:#FAF6EE;padding:24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+<div style="position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;border:2px dashed rgba(200,147,90,.45)"></div>
+<div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#CDD7B1">THE PERFECT DOSE</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:.8;color:#C8935A">15<span style="font-size:44px;color:#FAF6EE"> min</span></div>
+<div style="font-size:14px;line-height:1.5;color:#E4E2D0">Start with 5–10mg and feel it like a cocktail. It wears off in about 4 hours.</div>
+</div>
+<div style="border-radius:22px;background:#F3ECDD;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="color:#C8935A;letter-spacing:2px;font-size:18px">★★★★★</span><span style="font-family:'Bebas Neue',sans-serif;font-size:30px">4.8</span></div>
+<div style="font-size:18px;line-height:1.45;font-weight:600">"I am a big fan. Much better than waking up with wine head!"</div>
+<div style="display:flex;align-items:center;gap:10px"><span style="width:36px;height:36px;border-radius:50%;background:#C8935A;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px">J</span><span style="font-size:14px;font-weight:700">Jill U. · Verified buyer</span></div>
+</div>
+</div>
+</div>
+
+<!-- HERO E -->
+<div id="hero-e" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:14px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:22px;background:#23261A;color:#FAF6EE;padding:6px 14px;border-radius:999px;letter-spacing:.06em">Hero E</span><span style="font-weight:800;font-size:18px">Pick your drink (interactive)</span><span style="font-size:15px;color:#4A473D">· Visitors pick a drink and see it come to life with their dose. It demonstrates the "make any drink" promise. Click the chips.</span></div>
+<div style="width:1440px;height:820px;position:relative;border-radius:28px;overflow:hidden;background:radial-gradient(60% 80% at 15% 20%,#E2E8CC 0%,transparent 60%),radial-gradient(60% 80% at 90% 30%,#F4E2CC 0%,transparent 60%),#FAF6EE;display:grid;grid-template-columns:1.05fr 1fr">
+<div style="padding:72px 40px 64px 72px;display:flex;flex-direction:column;justify-content:center;gap:28px;position:relative;z-index:1">
+<div style="font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#A8703A">You're the mixologist</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:136px;line-height:.82">Make any drink a<br><span style="color:#6F7D2B">{{ drink.name }}</span><br>with a buzz.</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ drinks }}" as="d" hint-placeholder-count="5"><button onClick="{{ d.pick }}" style="cursor:pointer;border:1.5px solid #23261A;border-radius:999px;padding:11px 18px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;background:{{ d.bg }};color:{{ d.fg }};transition:background .15s">{{ d.label }}</button></sc-for>
+</div>
+<div style="display:flex;gap:16px;align-items:center;background:#FFFDF8;border:1px solid #E6DDC9;border-radius:20px;padding:14px 14px 14px 20px;max-width:560px">
+<div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;font-weight:800;letter-spacing:.12em;color:#8B8775">RECIPE</span><span style="font-size:15px;line-height:1.45;font-weight:600">{{ drink.recipe }}</span></div>
+<a href="#" style="display:flex;gap:8px;align-items:center;background:#23261A;color:#FAF6EE;font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.06em;padding:0 20px;height:52px;border-radius:999px;white-space:nowrap" style-hover="background:#3A4218;color:#FAF6EE"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Get the THC</a>
+</div>
+</div>
+<div style="position:relative;display:flex;align-items:center;justify-content:center">
+<div style="position:absolute;width:560px;height:560px;border-radius:50%;background:{{ drink.tint }};transition:background .5s cubic-bezier(.22,1,.36,1)"></div>
+<div style="position:absolute;width:640px;height:640px;border-radius:50%;border:1.5px dashed rgba(35,38,26,.25)"></div>
+{{ drinkImg }}
+<div style="position:absolute;right:64px;top:110px;background:#23261A;color:#FAF6EE;border-radius:18px;padding:16px 20px;display:flex;flex-direction:column;gap:2px;box-shadow:0 18px 40px -18px rgba(35,38,26,.6)"><span style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#CDD7B1">SUGGESTED DOSE</span><span style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:#C8935A">{{ drink.dose }}</span></div>
+<div style="position:absolute;left:40px;bottom:110px;background:#FFFDF8;border:1px solid #E6DDC9;border-radius:18px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 18px 40px -22px rgba(35,38,26,.5)"><span style="width:22px;height:22px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/timer.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/timer.svg) center/contain no-repeat"></span><span style="font-weight:800;font-size:15px">Ready in {{ drink.time }} · kicks in ~15 min</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PRODUCT CARDS -->
+<section data-screen-label="Product cards" style="display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;align-items:baseline;gap:20px;border-bottom:1px solid #D6CCB6;padding-bottom:20px"><div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.9">Product cards</div><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#6B6754">6 STYLES · WISHLIST · QUICK VIEW · COMPARE · ADD TO CART</div><div style="flex:1"></div><div style="display:flex;gap:10px;align-items:center;font-weight:800;font-size:14px;background:#23261A;color:#FAF6EE;padding:10px 16px;border-radius:999px"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Cart {{ cart }}<span style="opacity:.4">|</span>Compare {{ compareCount }}<span style="opacity:.4">|</span>Wishlist {{ wishCount }}</div></div>
+
+<div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+<!-- CARD 1 -->
+<div id="card-1" style="display:flex;flex-direction:column;gap:14px;width:330px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;background:#23261A;color:#FAF6EE;padding:4px 12px;border-radius:999px;letter-spacing:.06em">Card 1</span><span style="font-weight:800">Classic with action rail</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#F3ECDD;border-radius:22px;padding:12px 12px 16px;transition:transform .45s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateY(-6px)">
+<div style="position:relative;background:#FFFDF8;border-radius:16px;aspect-ratio:1/1.08;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<img src="assets/product-mocktail-100mg.png" alt="" style="max-height:88%;max-width:80%;object-fit:contain;mix-blend-mode:multiply">
+<span style="position:absolute;top:12px;left:12px;background:#6F7D2B;color:#FAF6EE;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px">BEST SELLER</span>
+<div style="position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:8px">
+<button title="Wishlist" onClick="{{ p1.wish }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1px solid #E6DDC9;background:{{ p1.wishBg }};color:{{ p1.wishFg }};display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(35,38,26,.35)"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat"></span></button>
+<button title="Quick view" onClick="{{ p1.quick }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1px solid #E6DDC9;background:#FFFDF8;color:#23261A;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(35,38,26,.35)" style-hover="background:#23261A;color:#FAF6EE"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat"></span></button>
+<button title="Compare" onClick="{{ p1.comp }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1px solid #E6DDC9;background:{{ p1.compBg }};color:{{ p1.compFg }};display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(35,38,26,.35)"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat"></span></button>
+</div>
+</div>
+<div style="padding:0 6px;display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;color:#C8935A;letter-spacing:2px">★★★★★ <span style="color:#6B6754;letter-spacing:0;font-weight:700">101 reviews</span></div><div style="font-weight:800;font-size:17px;line-height:1.3">Cannabis Mocktail Creator · 100mg</div><div style="font-size:13px;color:#6B6754">20 servings · 5mg each</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:0 6px"><span style="font-family:'Bebas Neue',sans-serif;font-size:32px">$28.95</span>
+<button onClick="{{ p1.add }}" style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 18px;height:44px;display:flex;align-items:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em" style-hover="background:#C8935A;color:#23261A"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add</button></div>
+</div>
+<div style="font-size:13px;color:#4A473D;line-height:1.5">A vertical rail for wishlist, quick view and compare. Good default for collection grids.</div>
+</div>
+
+<!-- CARD 2 -->
+<div id="card-2" style="display:flex;flex-direction:column;gap:14px;width:330px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;background:#23261A;color:#FAF6EE;padding:4px 12px;border-radius:999px;letter-spacing:.06em">Card 2</span><span style="font-weight:800">Editorial + toolbar</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="position:relative;border-radius:22px;aspect-ratio:1/1.22;overflow:hidden;background:linear-gradient(135deg,#FAF6EE,#F4D3C4 55%,#E8A994);display:flex;align-items:center;justify-content:center">
+<img src="assets/product-rose-thc.png" alt="" style="height:96%;object-fit:contain;mix-blend-mode:multiply">
+<span style="position:absolute;top:14px;left:14px;background:#FAF6EE;color:#23261A;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px">50MG THC</span>
+<div style="position:absolute;left:12px;right:12px;bottom:12px;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(250,246,238,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.6);border-radius:14px;overflow:hidden">
+<button onClick="{{ p2.quick }}" style="cursor:pointer;border:none;background:transparent;height:46px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:#23261A" style-hover="background:rgba(35,38,26,.08)"><span style="width:16px;height:16px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat"></span>Quick view</button>
+<button onClick="{{ p2.comp }}" style="cursor:pointer;border:none;border-left:1px solid rgba(35,38,26,.12);border-right:1px solid rgba(35,38,26,.12);background:{{ p2.compBgSoft }};height:46px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:{{ p2.compFgSoft }}"><span style="width:16px;height:16px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat"></span>Compare</button>
+<button onClick="{{ p2.wish }}" style="cursor:pointer;border:none;background:{{ p2.wishBgSoft }};height:46px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;color:{{ p2.wishFgSoft }}"><span style="width:16px;height:16px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat"></span>Save</button>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:12px;padding:0 4px"><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:800;letter-spacing:.12em;color:#A8703A">NON-ALCOHOLIC WINE</div><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:.95">Rosé · 50mg liquid THC</div></div><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:1">$28.98</div></div>
+<button onClick="{{ p2.add }}" style="border:1.5px solid #23261A;cursor:pointer;background:transparent;color:#23261A;border-radius:999px;height:52px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em" style-hover="background:#23261A;color:#FAF6EE"><span style="width:19px;height:19px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add to cart</button>
+</div>
+<div style="font-size:13px;color:#4A473D;line-height:1.5">A tall gradient image with a frosted toolbar. Premium feel for wines and features.</div>
+</div>
+
+<!-- CARD 3 -->
+<div id="card-3" style="display:flex;flex-direction:column;gap:14px;width:330px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;background:#23261A;color:#FAF6EE;padding:4px 12px;border-radius:999px;letter-spacing:.06em">Card 3</span><span style="font-weight:800">Light with strength picker</span></div>
+<div style="background:#FFFDF8;color:#23261A;border:1px solid #E6DDC9;border-radius:22px;padding:14px;display:flex;flex-direction:column;gap:14px;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateY(-6px);box-shadow:0 24px 40px -20px rgba(35,38,26,.35)">
+<div style="position:relative;border-radius:16px;aspect-ratio:1/1;overflow:hidden;background:radial-gradient(closest-side,#FFFDF8 0%,#F4E2CC 75%,#E8C7A1 130%);display:flex;align-items:center;justify-content:center">
+<img src="{{ p3.img }}" alt="" style="max-height:86%;max-width:80%;object-fit:contain;mix-blend-mode:multiply">
+<div style="position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-start"><span style="background:#6F7D2B;color:#FAF6EE;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px">BEST SELLER</span><span style="background:#23261A;color:#FAF6EE;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px">{{ p3.badge }}</span></div>
+<div style="position:absolute;top:10px;right:10px;display:flex;gap:6px">
+<button onClick="{{ p3.wish }}" style="cursor:pointer;width:38px;height:38px;border-radius:50%;border:1px solid #E6DDC9;box-shadow:0 6px 14px -8px rgba(35,38,26,.35);background:{{ p3.wishBg }};color:{{ p3.wishFg }};display:flex;align-items:center;justify-content:center"><span style="width:17px;height:17px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat"></span></button>
+<button onClick="{{ p3.quick }}" style="cursor:pointer;width:38px;height:38px;border-radius:50%;border:1px solid #E6DDC9;box-shadow:0 6px 14px -8px rgba(35,38,26,.35);background:#FFFDF8;color:#23261A;display:flex;align-items:center;justify-content:center" style-hover="background:#23261A;color:#FAF6EE"><span style="width:17px;height:17px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat"></span></button>
+<button onClick="{{ p3.comp }}" style="cursor:pointer;width:38px;height:38px;border-radius:50%;border:1px solid #E6DDC9;box-shadow:0 6px 14px -8px rgba(35,38,26,.35);background:{{ p3.compBg }};color:{{ p3.compFg }};display:flex;align-items:center;justify-content:center"><span style="width:17px;height:17px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat"></span></button>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:0 4px"><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:.95">Mocktail Creator</div><div style="display:flex;justify-content:space-between;gap:8px;font-size:13px;color:#6B6754"><span>{{ p3.sub }}</span><span style="color:#C8935A;letter-spacing:1px;white-space:nowrap">★★★★★</span></div></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:#F3ECDD;border:1px solid #E6DDC9;border-radius:999px;padding:4px">
+<sc-for list="{{ p3.sizes }}" as="s" hint-placeholder-count="3"><button onClick="{{ s.pick }}" style="cursor:pointer;border:none;border-radius:999px;height:36px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:800;background:{{ s.bg }};color:{{ s.fg }};transition:background .2s">{{ s.label }}</button></sc-for>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:0 4px"><span style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:#23261A">{{ p3.price }}</span>
+<button onClick="{{ p3.add }}" style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 20px;height:46px;display:flex;align-items:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.06em" style-hover="background:#C8935A;color:#23261A"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add</button></div>
+</div>
+<div style="font-size:13px;color:#4A473D;line-height:1.5">Light version with best-seller and strength badges. Choose a strength right on the card, and the price and image update. Great for the Mocktail Creator family.</div>
+</div>
+
+<!-- CARD 4 -->
+<div id="card-4" style="display:flex;flex-direction:column;gap:14px;width:330px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;background:#23261A;color:#FAF6EE;padding:4px 12px;border-radius:999px;letter-spacing:.06em">Card 4</span><span style="font-weight:800">Hover reveal + sale</span></div>
+<div style="position:relative;display:flex;flex-direction:column;background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;overflow:hidden" onMouseEnter="{{ p4.enter }}" onMouseLeave="{{ p4.leave }}">
+<div style="position:relative;aspect-ratio:1/1.05;background:#FFFDF8;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<img src="assets/product-maryrita-4pack.png" alt="" style="max-height:92%;max-width:92%;object-fit:contain;mix-blend-mode:multiply;transform:{{ p4.zoom }};transition:transform .6s cubic-bezier(.22,1,.36,1)">
+<span style="position:absolute;top:14px;left:14px;background:#C8935A;color:#23261A;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;padding:4px 12px;border-radius:999px">−39%</span>
+<div style="position:absolute;top:14px;right:14px;display:flex;flex-direction:column;gap:8px;transform:{{ p4.railX }};opacity:{{ p4.op }};transition:all .35s cubic-bezier(.22,1,.36,1)">
+<button onClick="{{ p4.wish }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1px solid #E6DDC9;background:{{ p4.wishBg }};color:{{ p4.wishFg }};display:flex;align-items:center;justify-content:center"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat"></span></button>
+<button onClick="{{ p4.comp }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1px solid #E6DDC9;background:{{ p4.compBg }};color:{{ p4.compFg }};display:flex;align-items:center;justify-content:center"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat"></span></button>
+<button onClick="{{ p4.share }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1px solid #E6DDC9;background:#FFFDF8;color:#23261A;display:flex;align-items:center;justify-content:center" style-hover="background:#23261A;color:#FAF6EE"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/share-2.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/share-2.svg) center/contain no-repeat"></span></button>
+</div>
+<div style="position:absolute;left:12px;right:12px;bottom:12px;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;transform:{{ p4.barY }};opacity:{{ p4.op }};transition:all .4s cubic-bezier(.22,1,.36,1)">
+<button onClick="{{ p4.quick }}" style="cursor:pointer;border:none;background:#FAF6EE;color:#23261A;border-radius:999px;height:46px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.06em;box-shadow:0 0 0 1px #E6DDC9"><span style="width:17px;height:17px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat"></span>View</button>
+<button onClick="{{ p4.add }}" style="cursor:pointer;border:none;background:#23261A;color:#FAF6EE;border-radius:999px;height:46px;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.06em" style-hover="background:#3A4218"><span style="width:17px;height:17px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add to cart</button>
+</div>
+</div>
+<div style="padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;border-top:1px solid #EFE7D6">
+<div style="font-weight:800;font-size:17px">MaryRita · Party 4 Pack</div>
+<div style="display:flex;gap:10px;align-items:baseline"><span style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#A8703A">$19.99</span><span style="font-size:14px;color:#8B8775;text-decoration:line-through">$32.99</span><span style="font-size:12px;font-weight:800;color:#6F7D2B">You save $13</span></div>
+</div>
+</div>
+<div style="font-size:13px;color:#4A473D;line-height:1.5">A clean card where the actions slide in on hover (try it). Built for sales and promos.</div>
+</div>
+
+<!-- CARD 5 -->
+<div id="card-5" style="display:flex;flex-direction:column;gap:14px;width:330px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;background:#23261A;color:#FAF6EE;padding:4px 12px;border-radius:999px;letter-spacing:.06em">Card 5</span><span style="font-weight:800">Color-block bold</span></div>
+<div style="position:relative;background:#E2E8CC;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:12px;overflow:hidden;min-height:470px;box-sizing:border-box">
+<div style="position:absolute;inset:0;opacity:.5;background-image:radial-gradient(#AEBD7F 1.5px,transparent 2px);background-size:18px 18px"></div>
+<div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#3A4218">WELLNESS · NEW</span><span style="font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:.88">SwāeZ Calm<br>Island Iced Tea</span></div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<button onClick="{{ p5.wish }}" style="cursor:pointer;width:38px;height:38px;border-radius:50%;border:1.5px solid #23261A;background:{{ p5.wishBg }};color:{{ p5.wishFg }};display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat"></span></button>
+<button onClick="{{ p5.comp }}" style="cursor:pointer;width:38px;height:38px;border-radius:50%;border:1.5px solid #23261A;background:{{ p5.compBg }};color:{{ p5.compFg }};display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/git-compare-arrows.svg) center/contain no-repeat"></span></button>
+</div>
+</div>
+<div style="position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:220px"><img src="assets/products/swaez-mood-enhancer-calm-island-iced-tea--1--01_hero_white.jpg" alt="" style="max-height:240px;max-width:100%;object-fit:contain;mix-blend-mode:multiply;border-radius:12px"></div>
+<div style="position:relative;display:flex;gap:6px"><span style="background:#FAF6EE;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px">4 × 12oz cans</span><span style="background:#FAF6EE;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px">Mood support</span></div>
+<div style="position:relative;display:flex;align-items:center;gap:8px;background:#23261A;border-radius:999px;padding:6px 6px 6px 20px">
+<span style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#FAF6EE;flex:1">$19.99</span>
+<button onClick="{{ p5.quick }}" style="cursor:pointer;width:44px;height:44px;border-radius:50%;border:none;background:#3A4218;color:#FAF6EE;display:flex;align-items:center;justify-content:center" style-hover="background:#586422"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat"></span></button>
+<button onClick="{{ p5.add }}" style="cursor:pointer;border:none;background:#C8935A;color:#23261A;border-radius:999px;padding:0 18px;height:44px;display:flex;align-items:center;gap:8px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em" style-hover="background:#D9A772"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add</button>
+</div>
+</div>
+<div style="font-size:13px;color:#4A473D;line-height:1.5">Each product line gets a tinted ground and dot pattern. Playful for features and new launches.</div>
+</div>
+
+<!-- CARD 6 -->
+<div id="card-6" style="display:flex;flex-direction:column;gap:14px;width:700px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-family:'Bebas Neue',sans-serif;font-size:20px;background:#23261A;color:#FAF6EE;padding:4px 12px;border-radius:999px;letter-spacing:.06em">Card 6</span><span style="font-weight:800">Horizontal list / compare-ready</span></div>
+<div style="display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:14px">
+<div style="background:#F3ECDD;border-radius:16px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;position:relative"><img src="assets/product-chardonnay-thc.png" alt="" style="max-height:94%;max-width:94%;object-fit:contain;mix-blend-mode:multiply"><span style="position:absolute;top:10px;left:10px;background:#CDD7B1;color:#3A4218;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px">50MG THC</span></div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:6px 6px 6px 0">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><div><div style="font-size:12px;font-weight:800;letter-spacing:.12em;color:#A8703A">NON-ALCOHOLIC WINE</div><div style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:.95;margin-top:4px">Chardonnay · 50mg liquid THC</div></div><span style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1">$28.98</span></div>
+<div style="font-size:14px;color:#4A473D;line-height:1.5">Crisp, alcohol-removed Chardonnay with a pre-measured 50mg liquid THC cap. Dose it your way.</div>
+<div style="display:flex;gap:16px;font-size:13px;font-weight:700;color:#4A473D;flex-wrap:wrap"><span style="display:flex;gap:6px;align-items:center"><span style="width:16px;height:16px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/wine.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/wine.svg) center/contain no-repeat"></span>750mL</span><span style="display:flex;gap:6px;align-items:center"><span style="width:16px;height:16px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/leaf.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/leaf.svg) center/contain no-repeat"></span>Hemp-derived Δ9</span><span style="display:flex;gap:6px;align-items:center"><span style="width:16px;height:16px;display:inline-block;background:#6F7D2B;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/badge-check.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/badge-check.svg) center/contain no-repeat"></span>COA available</span></div>
+<div style="display:flex;gap:8px;align-items:center;margin-top:auto;flex-wrap:wrap">
+<button onClick="{{ p6.add }}" style="cursor:pointer;border:none;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 22px;height:48px;display:flex;align-items:center;gap:9px;font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.06em" style-hover="background:#3A4218"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add to cart</button>
+<button onClick="{{ p6.quick }}" style="cursor:pointer;border:1.5px solid #23261A;background:transparent;color:#23261A;border-radius:999px;padding:0 16px;height:48px;display:flex;align-items:center;gap:8px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:800" style-hover="background:#F3ECDD"><span style="width:17px;height:17px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/eye.svg) center/contain no-repeat"></span>Quick view</button>
+<button onClick="{{ p6.wish }}" style="cursor:pointer;width:48px;height:48px;border-radius:50%;border:1.5px solid #23261A;background:{{ p6.wishBg }};color:{{ p6.wishFg }};display:flex;align-items:center;justify-content:center"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/heart.svg) center/contain no-repeat"></span></button>
+<label onClick="{{ p6.comp }}" style="cursor:pointer;margin-left:auto;display:flex;gap:8px;align-items:center;font-size:14px;font-weight:800"><span style="width:22px;height:22px;border-radius:6px;border:1.5px solid #23261A;background:{{ p6.compBg }};color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-size:13px">{{ p6.check }}</span>Compare</label>
+</div>
+</div>
+</div>
+<div style="font-size:13px;color:#4A473D;line-height:1.5">A horizontal layout with specs and a compare checkbox. Use it for search results, wholesale lists and the compare tray.</div>
+</div>
+
+</div>
+</section>
+
+<sc-if value="{{ qvOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closeQv }}" style="position:fixed;inset:0;background:rgba(35,38,26,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:100;display:flex;align-items:center;justify-content:center;padding:40px">
+<div onClick="{{ stop }}" style="width:880px;max-width:100%;background:#FAF6EE;border-radius:28px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:28px;box-shadow:0 40px 80px -20px rgba(0,0,0,.5);animation:hbc-fadeup .45s cubic-bezier(.22,1,.36,1)">
+<div style="background:#FFFDF8;border-radius:20px;aspect-ratio:1/1.05;display:flex;align-items:center;justify-content:center"><img src="{{ qv.img }}" alt="" style="max-height:90%;max-width:86%;object-fit:contain;mix-blend-mode:multiply"></div>
+<div style="display:flex;flex-direction:column;gap:14px;padding:20px 20px 20px 0">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:800;letter-spacing:.14em;color:#A8703A">QUICK VIEW</span><button onClick="{{ closeQv }}" style="cursor:pointer;width:40px;height:40px;border-radius:50%;border:1.5px solid #23261A;background:transparent;display:flex;align-items:center;justify-content:center;color:#23261A"><span style="width:18px;height:18px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/x.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/x.svg) center/contain no-repeat"></span></button></div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:.92">{{ qv.name }}</div>
+<div style="display:flex;gap:10px;align-items:center"><span style="color:#C8935A;letter-spacing:2px">★★★★★</span><span style="font-size:13px;font-weight:700;color:#6B6754">4.8 · Verified reviews</span></div>
+<div style="font-size:15px;line-height:1.6;color:#4A473D">{{ qv.desc }}</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:44px;color:#23261A">{{ qv.price }}</div>
+<div style="display:flex;gap:10px;margin-top:auto">
+<button onClick="{{ qvAdd }}" style="flex:1;cursor:pointer;border:none;background:#23261A;color:#FAF6EE;border-radius:999px;height:56px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:.06em" style-hover="background:#3A4218"><span style="width:20px;height:20px;display:inline-block;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/shopping-cart.svg) center/contain no-repeat"></span>Add to cart</button>
+</div>
+<div style="font-size:12px;color:#6B6754">21+ only · Not sold in AK &amp; ID · Free shipping on $50+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ toastOn }}" hint-placeholder-val="{{ false }}">
+<div style="position:fixed;left:50%;bottom:32px;transform:translateX(-50%);z-index:120;display:flex;gap:12px;align-items:center;background:#23261A;color:#FAF6EE;border-radius:999px;padding:10px 12px 10px 20px;box-shadow:0 20px 40px -16px rgba(0,0,0,.5);animation:hbc-toast .4s cubic-bezier(.22,1,.36,1)"><span style="width:20px;height:20px;display:inline-block;background:#C8935A;-webkit-mask:url(https://unpkg.com/lucide-static@0.460.0/icons/circle-check.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@0.460.0/icons/circle-check.svg) center/contain no-repeat"></span><span style="font-weight:700;font-size:14px">{{ toast }}</span><span style="background:#C8935A;color:#23261A;border-radius:999px;padding:8px 14px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em">View cart</span></div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cart: 0, wish: {}, comp: {}, qv: null, toast: '', drink: 0, size: 1, hover4: false };
+  showToast(t) { clearTimeout(this.tt); this.setState({ toast: t }); this.tt = setTimeout(() => this.setState({ toast: '' }), 2200); }
+  renderVals() {
+    const h = React.createElement, S = this.state;
+    const P = {
+      p1: { name: 'Cannabis Mocktail Creator · 100mg', price: '$28.95', img: 'assets/product-mocktail-100mg.png', desc: 'Turns any drink into a cannabis beverage. 100mg of THC per bottle makes 20 servings of 5mg. Neutral taste, nano-emulsified and fast acting.' },
+      p2: { name: 'Rosé · 50mg Liquid THC', price: '$28.98', img: 'assets/product-rose-thc.png', desc: 'Alcohol-removed Rosé paired with a 50mg liquid THC cap. Half the calories of wine and no hangover.' },
+      p3: { name: 'Mocktail Creator', price: '', img: '', desc: 'Liquid THC in the size that suits you, from a 50mg starter to the 2000mg party pump.' },
+      p4: { name: 'MaryRita · Party 4 Pack', price: '$19.99', img: 'assets/product-maryrita-4pack.png', desc: 'Four 50mg liquid THC shots made for alcohol-free wine and margaritas. Built for the party.' },
+      p5: { name: 'SwāeZ Calm Island Iced Tea · 4-Pack', price: '$19.99', img: 'assets/products/swaez-mood-enhancer-calm-island-iced-tea--1--01_hero_white.jpg', desc: 'A mood-enhancing island iced tea. Four 12oz cans for calm, easy afternoons.' },
+      p6: { name: 'Chardonnay · 50mg Liquid THC', price: '$28.98', img: 'assets/product-chardonnay-thc.png', desc: 'Crisp, alcohol-removed Chardonnay with a pre-measured 50mg liquid THC cap.' }
+    };
+    const sizes = [{ label: '50MG', price: '$24.95', img: 'assets/product-mocktail-50mg.png', sub: '50mg · 10 servings · 50mL', badge: 'STARTER' }, { label: '100MG', price: '$28.95', img: 'assets/product-mocktail-100mg.png', sub: '100mg · 20 servings · 50mL', badge: 'MOST POPULAR' }, { label: 'PUMP', price: '$398', img: 'assets/product-pump.png', sub: '2000mg · 400 servings · 1000mL', badge: 'BEST VALUE' }];
+    const sz = sizes[S.size];
+    P.p3 = { ...P.p3, name: 'Mocktail Creator · ' + sz.label, price: sz.price, img: sz.img };
+    const mk = k => {
+      const w = !!S.wish[k], c = !!S.comp[k], p = P[k];
+      return {
+        wishBg: w ? '#B5452E' : '#FFFDF8', wishFg: w ? '#FAF6EE' : '#23261A',
+        compBg: c ? '#6F7D2B' : '#FFFDF8', compFg: c ? '#FAF6EE' : '#23261A',
+        wishBgSoft: w ? 'rgba(181,69,46,.14)' : 'transparent', wishFgSoft: w ? '#B5452E' : '#23261A',
+        compBgSoft: c ? 'rgba(111,125,43,.18)' : 'transparent', compFgSoft: c ? '#3A4218' : '#23261A',
+        check: c ? '✓' : '',
+        wish: () => { this.setState(s => ({ wish: { ...s.wish, [k]: !s.wish[k] } })); this.showToast(w ? 'Removed from wishlist' : 'Saved to wishlist'); },
+        comp: () => { this.setState(s => ({ comp: { ...s.comp, [k]: !s.comp[k] } })); this.showToast(c ? 'Removed from compare' : 'Added to compare'); },
+        quick: () => this.setState({ qv: k }),
+        share: () => this.showToast('Link copied'),
+        add: () => { this.setState(s => ({ cart: s.cart + 1 })); this.showToast(p.name + ' added to cart'); }
+      };
+    };
+    const p3 = mk('p3'), p4 = mk('p4');
+    const drinks = [
+      { label: 'Mojito', name: 'Mojito', img: 'assets/recipe-mojito.png', tint: '#E2E8CC', dose: '5MG', time: '3 min', recipe: 'Mint, lime and soda over crushed ice, then your dose of Mocktail Creator.' },
+      { label: 'Margarita', name: 'Margarita', img: 'assets/recipe-margarita.png', tint: '#EFE9B8', dose: '5–10MG', time: '4 min', recipe: 'Lime, agave and a salted rim, shaken with your dose.' },
+      { label: 'Piña Colada', name: 'Piña Colada', img: 'assets/recipe-pina-colada.png', tint: '#F4E2CC', dose: '5MG', time: '5 min', recipe: 'Pineapple, coconut cream, vanilla and ice, blended smooth.' },
+      { label: 'Cosmo', name: 'Cosmo', img: 'assets/recipe-cosmopolitan.png', tint: '#F4D3C4', dose: '5MG', time: '3 min', recipe: 'Cranberry, lime and orange, shaken and served up.' },
+      { label: 'Mai Tai', name: 'Mai Tai', img: 'assets/recipe-mai-tai.png', tint: '#F4D9B8', dose: '10MG', time: '5 min', recipe: 'Orange, lime, orgeat and a tropical float.' }];
+    const d = drinks[S.drink];
+    const qv = S.qv ? P[S.qv] : { name: '', price: '', img: '', desc: '' };
+    return {
+      badge: h('div', { style: { position: 'relative', width: 190, height: 190 } },
+        h('svg', { viewBox: '0 0 200 200', width: 190, height: 190, style: { animation: 'hbc-spin 24s linear infinite', position: 'absolute', inset: 0 } },
+          h('defs', null, h('path', { id: 'hbcC', d: 'M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0' })),
+          h('text', { fill: '#FAF6EE', style: { fontFamily: "'Bebas Neue',sans-serif", fontSize: 25, letterSpacing: 6 } }, h('textPath', { href: '#hbcC' }, 'JOIN THE REVOLUTION · NO HANGOVER · '))),
+        h('div', { style: { position: 'absolute', inset: 46, borderRadius: '50%', background: '#C8935A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Bebas Neue',sans-serif", fontSize: 34, color: '#23261A', lineHeight: .9, textAlign: 'center' } }, '100%', h('br'), 'Legal')),
+      bubblesB: h('div', { style: { position: 'absolute', inset: 0 } }, Array.from({ length: 18 }, (_, i) => h('span', { key: i, style: { position: 'absolute', bottom: -30, left: (4 + (i * 41) % 92) + '%', width: 10 + (i * 7) % 20, height: 10 + (i * 7) % 20, borderRadius: '50%', border: '2px solid rgba(250,246,238,.75)', background: 'rgba(250,246,238,.15)', animation: `hbc-bubble ${5 + (i % 5)}s ease-in infinite`, animationDelay: `-${(i * 0.71) % 6}s` } }))),
+      floatB: h('img', { src: 'assets/product-mocktail-100mg.png', alt: 'Cannabis Mocktail Creator', style: { height: 540, animation: 'hbc-float 6s ease-in-out infinite', filter: 'drop-shadow(0 40px 40px rgba(35,38,26,.35))', borderRadius: 18 } }),
+      meshC: h('div', { style: { position: 'absolute', inset: 0 } },
+        h('div', { style: { position: 'absolute', width: 700, height: 700, left: -200, bottom: -300, borderRadius: '50%', background: 'radial-gradient(closest-side,rgba(142,158,79,.55),rgba(142,158,79,0))', animation: 'hbc-drift 16s ease-in-out infinite' } }),
+        h('div', { style: { position: 'absolute', width: 600, height: 600, right: -150, top: -200, borderRadius: '50%', background: 'radial-gradient(closest-side,rgba(200,147,90,.45),rgba(200,147,90,0))', animation: 'hbc-drift 20s ease-in-out infinite reverse' } })),
+      drinks: drinks.map((x, i) => ({ label: x.label, bg: i === S.drink ? '#23261A' : 'transparent', fg: i === S.drink ? '#FAF6EE' : '#23261A', pick: () => this.setState({ drink: i }) })),
+      drink: d,
+      drinkImg: h('img', { key: S.drink, src: d.img, alt: d.name, style: { position: 'relative', height: 600, mixBlendMode: 'multiply', animation: 'hbc-fadeup .6s cubic-bezier(.22,1,.36,1) both' } }),
+      cart: S.cart,
+      compareCount: Object.values(S.comp).filter(Boolean).length,
+      wishCount: Object.values(S.wish).filter(Boolean).length,
+      p1: mk('p1'), p2: mk('p2'), p5: mk('p5'), p6: mk('p6'),
+      p3: { ...p3, badge: sz.badge, img: sz.img, price: sz.price, sub: sz.sub, sizes: sizes.map((s, i) => ({ label: s.label, bg: i === S.size ? '#23261A' : 'transparent', fg: i === S.size ? '#FAF6EE' : '#23261A', pick: () => this.setState({ size: i }) })) },
+      p4: { ...p4, enter: () => this.setState({ hover4: true }), leave: () => this.setState({ hover4: false }), op: S.hover4 ? 1 : 0, railX: S.hover4 ? 'none' : 'translateX(16px)', barY: S.hover4 ? 'none' : 'translateY(20px)', zoom: S.hover4 ? 'scale(1.06)' : 'none' },
+      qvOpen: !!S.qv, qv,
+      closeQv: () => this.setState({ qv: null }),
+      stop: e => e.stopPropagation(),
+      qvAdd: () => { this.setState(s => ({ cart: s.cart + 1, qv: null })); this.showToast(qv.name + ' added to cart'); },
+      toastOn: !!S.toast, toast: S.toast
+    };
+  }
+}
+</script>
+</body>
+</html>

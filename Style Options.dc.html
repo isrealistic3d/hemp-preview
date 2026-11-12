@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=Bebas+Neue&family=Manrope:wght@400;500;700&family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#E7E4DD;-webkit-font-smoothing:antialiased}a{color:#6B7A2A;text-decoration:none}a:hover{color:#C98B4E}</style>
+</helmet>
+
+<div style="padding:96px 96px 160px;display:flex;flex-direction:column;gap:140px;font-family:'Hanken Grotesk',sans-serif;color:#2B2A22;min-width:3200px">
+
+<div style="display:flex;flex-direction:column;gap:12px;max-width:1200px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#7C7768">Hemp Beverage Company · Redesign foundations</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:88px;font-weight:600;line-height:1;letter-spacing:-.01em">Style options</div>
+<div style="font-size:20px;line-height:1.5;color:#5A564A;max-width:760px">Pick one from each row: typography (T1–T5), color (C1–C5), header (H1–H3), footer (F1–F3). Headers and footers are shown in the brand's current copper and olive so you can judge layout on its own. Your chosen type and colors get applied afterwards.</div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<section data-screen-label="Typography" style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;align-items:baseline;gap:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600">Typography</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C7768;letter-spacing:.08em">5 PAIRINGS · ALL GOOGLE FONTS</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:40px">
+
+<div id="T1" style="width:600px;background:#FBF8F2;border-radius:6px;padding:48px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">T1</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C7768">CORMORANT GARAMOND + JOST</div></div>
+<div style="font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#C98B4E;font-weight:500">Heritage apothecary</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:76px;font-weight:600;line-height:.95;letter-spacing:-.01em">Sip Smarter. Feel Better.</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;line-height:1.25;color:#5A564A">Upgrade your unwind without the hangovers.</div>
+<div style="font-family:'Jost',sans-serif;font-size:17px;line-height:1.65;color:#4A473D">Mocktail Creator's Liquid THC transforms any drink into a delicious, refreshing cannabis beverage. Nano-emulsified to take effect in about 15 minutes.</div>
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:#2B2A22;color:#FBF8F2;padding:16px 28px">Shop Mocktail Creator</div><div style="font-family:'Jost',sans-serif;font-size:14px;color:#7C7768">$28.95 · 20 servings</div></div>
+<div style="font-size:14px;line-height:1.5;color:#7C7768;border-top:1px solid #E2DCCE;padding-top:20px">Echoes the logo's classic serif. Elegant and premium, like wine. Best fit for the non-alcoholic wine line.</div>
+</div>
+
+<div id="T2" style="width:600px;background:#FBF8F2;border-radius:6px;padding:48px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">T2</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C7768">INSTRUMENT SERIF + INSTRUMENT SANS</div></div>
+<div style="font-family:'Instrument Sans',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C98B4E;font-weight:600">Modern editorial</div>
+<div style="font-family:'Instrument Serif',serif;font-size:84px;line-height:.92;letter-spacing:-.02em">Sip smarter. <span style="font-style:italic">Feel better.</span></div>
+<div style="font-family:'Instrument Sans',sans-serif;font-size:24px;line-height:1.3;color:#5A564A;font-weight:500">Upgrade your unwind without the hangovers.</div>
+<div style="font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.6;color:#4A473D">Mocktail Creator's Liquid THC transforms any drink into a delicious, refreshing cannabis beverage. Nano-emulsified to take effect in about 15 minutes.</div>
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;background:#2B2A22;color:#FBF8F2;padding:16px 28px;border-radius:999px">Shop Mocktail Creator</div><div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#7C7768">$28.95 · 20 servings</div></div>
+<div style="font-size:14px;line-height:1.5;color:#7C7768;border-top:1px solid #E2DCCE;padding-top:20px">Reads like a modern lifestyle magazine. Calm and confident, with italics used for emphasis. Very versatile.</div>
+</div>
+
+<div id="T3" style="width:600px;background:#FBF8F2;border-radius:6px;padding:48px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">T3</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C7768">BRICOLAGE GROTESQUE + FIGTREE</div></div>
+<div style="font-family:'Figtree',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#C98B4E;font-weight:600">Social club</div>
+<div style="font-family:'Bricolage Grotesque',sans-serif;font-size:76px;font-weight:800;line-height:.92;letter-spacing:-.035em">Sip smarter. Feel better.</div>
+<div style="font-family:'Bricolage Grotesque',sans-serif;font-size:26px;font-weight:500;line-height:1.25;color:#5A564A;letter-spacing:-.01em">Upgrade your unwind without the hangovers.</div>
+<div style="font-family:'Figtree',sans-serif;font-size:17px;line-height:1.6;color:#4A473D">Mocktail Creator's Liquid THC transforms any drink into a delicious, refreshing cannabis beverage. Nano-emulsified to take effect in about 15 minutes.</div>
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'Figtree',sans-serif;font-size:16px;font-weight:600;background:#2B2A22;color:#FBF8F2;padding:16px 28px;border-radius:12px">Shop Mocktail Creator</div><div style="font-family:'Figtree',sans-serif;font-size:14px;color:#7C7768">$28.95 · 20 servings</div></div>
+<div style="font-size:14px;line-height:1.5;color:#7C7768;border-top:1px solid #E2DCCE;padding-top:20px">Friendly and bold with plenty of character. Feels like a modern DTC drinks brand and appeals to a younger, social crowd.</div>
+</div>
+
+<div id="T4" style="width:600px;background:#FBF8F2;border-radius:6px;padding:48px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">T4</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C7768">BEBAS NEUE + MANROPE</div></div>
+<div style="font-family:'Manrope',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C98B4E;font-weight:700">The mixologist</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:104px;line-height:.88;letter-spacing:.005em">Sip smarter. Feel better.</div>
+<div style="font-family:'Manrope',sans-serif;font-size:24px;font-weight:500;line-height:1.3;color:#5A564A">Upgrade your unwind without the hangovers.</div>
+<div style="font-family:'Manrope',sans-serif;font-size:17px;line-height:1.6;color:#4A473D">Mocktail Creator's Liquid THC transforms any drink into a delicious, refreshing cannabis beverage. Nano-emulsified to take effect in about 15 minutes.</div>
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;background:#2B2A22;color:#FBF8F2;padding:13px 28px">Shop Mocktail Creator</div><div style="font-family:'Manrope',sans-serif;font-size:14px;color:#7C7768">$28.95 · 20 servings</div></div>
+<div style="font-size:14px;line-height:1.5;color:#7C7768;border-top:1px solid #E2DCCE;padding-top:20px">Matches the condensed lettering on your Mocktail Creator packaging. Loud and punchy, and great for promos and big numbers like "15 MIN".</div>
+</div>
+
+<div id="T5" style="width:600px;background:#FBF8F2;border-radius:6px;padding:48px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">T5</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C7768">YOUNG SERIF + HANKEN GROTESK</div></div>
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#C98B4E;font-weight:600">Warm & approachable</div>
+<div style="font-family:'Young Serif',serif;font-size:70px;line-height:1;letter-spacing:-.02em">Sip smarter. Feel better.</div>
+<div style="font-family:'Young Serif',serif;font-size:25px;line-height:1.3;color:#5A564A">Upgrade your unwind without the hangovers.</div>
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:17px;line-height:1.6;color:#4A473D">Mocktail Creator's Liquid THC transforms any drink into a delicious, refreshing cannabis beverage. Nano-emulsified to take effect in about 15 minutes.</div>
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;font-weight:600;background:#2B2A22;color:#FBF8F2;padding:16px 28px;border-radius:6px">Shop Mocktail Creator</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#7C7768">$28.95 · 20 servings</div></div>
+<div style="font-size:14px;line-height:1.5;color:#7C7768;border-top:1px solid #E2DCCE;padding-top:20px">A soft, chunky serif that feels crafted and trustworthy. Good for dosing and education pages, where reassurance matters.</div>
+</div>
+
+</div>
+</section>
+
+<!-- COLOR -->
+<section data-screen-label="Color" style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;align-items:baseline;gap:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600">Color palettes</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C7768;letter-spacing:.08em">5 PALETTES · WITH IN-USE PREVIEW</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:40px">
+
+<div id="C1" style="width:600px;background:#FBF8F2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#F6F0E4;padding:40px;display:flex;flex-direction:column;gap:18px;height:280px;box-sizing:border-box;justify-content:flex-end">
+<div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#A86E36;font-weight:600">Non-alcoholic wine</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;line-height:.95;color:#2E2B20">Ditch the alcohol, not the magic.</div>
+<div style="display:flex;gap:10px"><div style="background:#5E6B24;color:#F6F0E4;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px">Shop now</div><div style="border:1.5px solid #2E2B20;color:#2E2B20;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px">Perfect dose</div><div style="background:#DCE3C6;color:#3D4518;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;padding:13px 16px;border-radius:999px">Lab tested</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);height:110px">
+<div style="background:#F6F0E4"></div><div style="background:#2E2B20"></div><div style="background:#5E6B24"></div><div style="background:#C98B4E"></div><div style="background:#DCE3C6"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A564A">
+<div style="padding:0 10px">Cream<br>#F6F0E4</div><div style="padding:0 10px">Ink<br>#2E2B20</div><div style="padding:0 10px">Olive<br>#5E6B24</div><div style="padding:0 10px">Copper<br>#C98B4E</div><div style="padding:0 10px">Sage<br>#DCE3C6</div>
+</div>
+<div style="padding:24px 32px 32px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">C1</div><div style="font-size:20px;font-weight:600">Heritage Copper</div></div>
+<div style="font-size:15px;line-height:1.5;color:#5A564A">Taken straight from your logo's copper, olive and sage. The safest evolution of the brand: warm, premium and recognisable.</div>
+</div>
+</div>
+
+<div id="C2" style="width:600px;background:#FBF8F2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#EFF5F1;padding:40px;display:flex;flex-direction:column;gap:18px;height:280px;box-sizing:border-box;justify-content:flex-end">
+<div style="font-family:'Figtree',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2D6B58;font-weight:700">Mocktail Creator</div>
+<div style="font-family:'Bricolage Grotesque',sans-serif;font-size:50px;font-weight:800;line-height:.95;letter-spacing:-.03em;color:#17302A">Make any drink a cannabis beverage.</div>
+<div style="display:flex;gap:10px"><div style="background:#17302A;color:#EFF5F1;font-family:'Figtree',sans-serif;font-size:14px;font-weight:600;padding:13px 22px;border-radius:999px">Shop now</div><div style="background:#7CC0A6;color:#17302A;font-family:'Figtree',sans-serif;font-size:14px;font-weight:600;padding:13px 22px;border-radius:999px">15-min onset</div><div style="background:#F2785C;color:#17302A;font-family:'Figtree',sans-serif;font-size:13px;font-weight:700;padding:13px 16px;border-radius:999px">−39%</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);height:110px">
+<div style="background:#EFF5F1"></div><div style="background:#17302A"></div><div style="background:#7CC0A6"></div><div style="background:#F2785C"></div><div style="background:#F5C951"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A564A">
+<div style="padding:0 10px">Mist<br>#EFF5F1</div><div style="padding:0 10px">Deep pine<br>#17302A</div><div style="padding:0 10px">Mint<br>#7CC0A6</div><div style="padding:0 10px">Coral<br>#F2785C</div><div style="padding:0 10px">Citrus<br>#F5C951</div>
+</div>
+<div style="padding:24px 32px 32px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">C2</div><div style="font-size:20px;font-weight:600">Mint Mixologist</div></div>
+<div style="font-size:15px;line-height:1.5;color:#5A564A">Built from the mint green and watercolor cocktail tones on your packaging. Fresh, fun and summery, and the closest match to the product shelf.</div>
+</div>
+</div>
+
+<div id="C3" style="width:600px;background:#FBF8F2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#15191A;padding:40px;display:flex;flex-direction:column;gap:18px;height:280px;box-sizing:border-box;justify-content:flex-end">
+<div style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#D9A46B;font-weight:600">After hours</div>
+<div style="font-family:'Instrument Serif',serif;font-size:56px;line-height:.95;color:#F2EBDD">Crafted for good vibes <span style="font-style:italic;color:#D9A46B">only.</span></div>
+<div style="display:flex;gap:10px"><div style="background:#D9A46B;color:#15191A;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 22px">Shop now</div><div style="border:1.5px solid #F2EBDD;color:#F2EBDD;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;padding:12px 22px">Recipes</div><div style="background:#A4B867;color:#15191A;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;padding:13px 16px;border-radius:999px">Farm Bill legal</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);height:110px">
+<div style="background:#15191A"></div><div style="background:#262B2C"></div><div style="background:#F2EBDD"></div><div style="background:#D9A46B"></div><div style="background:#A4B867"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A564A">
+<div style="padding:0 10px">Night<br>#15191A</div><div style="padding:0 10px">Slate<br>#262B2C</div><div style="padding:0 10px">Linen<br>#F2EBDD</div><div style="padding:0 10px">Amber<br>#D9A46B</div><div style="padding:0 10px">Lime leaf<br>#A4B867</div>
+</div>
+<div style="padding:24px 32px 32px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">C3</div><div style="font-size:20px;font-weight:600">Midnight Lounge</div></div>
+<div style="font-size:15px;line-height:1.5;color:#5A564A">A dark, cocktail-bar mood with amber highlights. Very premium and evening-focused, and product photos pop against it.</div>
+</div>
+</div>
+
+<div id="C4" style="width:600px;background:#FBF8F2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#FFF4EC;padding:40px;display:flex;flex-direction:column;gap:18px;height:280px;box-sizing:border-box;justify-content:flex-end">
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B04A26;font-weight:700">Rosé · Chardonnay</div>
+<div style="font-family:'Young Serif',serif;font-size:48px;line-height:1;letter-spacing:-.02em;color:#2C1C17">Cheers to good vibes.</div>
+<div style="display:flex;gap:10px"><div style="background:#C9552D;color:#FFF4EC;font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600;padding:13px 22px;border-radius:6px">Shop wine</div><div style="background:#F4BFAE;color:#2C1C17;font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600;padding:13px 22px;border-radius:6px">50mg THC</div><div style="background:#E9C46A;color:#2C1C17;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:700;padding:13px 16px;border-radius:6px">New</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);height:110px">
+<div style="background:#FFF4EC"></div><div style="background:#2C1C17"></div><div style="background:#C9552D"></div><div style="background:#F4BFAE"></div><div style="background:#E9C46A"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A564A">
+<div style="padding:0 10px">Blush<br>#FFF4EC</div><div style="padding:0 10px">Cocoa<br>#2C1C17</div><div style="padding:0 10px">Terracotta<br>#C9552D</div><div style="padding:0 10px">Rosé<br>#F4BFAE</div><div style="padding:0 10px">Chardonnay<br>#E9C46A</div>
+</div>
+<div style="padding:24px 32px 32px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">C4</div><div style="font-size:20px;font-weight:600">Sunset Spritz</div></div>
+<div style="font-size:15px;line-height:1.5;color:#5A564A">Warm rosé, terracotta and chardonnay gold. Joyful and sociable, the brunch-and-patio palette, and it complements the wine bottles well.</div>
+</div>
+</div>
+
+<div id="C5" style="width:600px;background:#FBF8F2;border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+<div style="background:#1F3328;padding:40px;display:flex;flex-direction:column;gap:18px;height:280px;box-sizing:border-box;justify-content:flex-end">
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700">Third-party lab tested</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:600;line-height:.95;color:#F7F3EA">Did we mention it's completely legal?</div>
+<div style="display:flex;gap:10px"><div style="background:#F7F3EA;color:#1F3328;font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600;padding:13px 22px">View lab tests</div><div style="background:#C08049;color:#1F3328;font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600;padding:13px 22px">Buy now</div><div style="background:#C4D49A;color:#1F3328;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:700;padding:13px 16px;border-radius:999px">0.3% Δ9</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);height:110px">
+<div style="background:#1F3328"></div><div style="background:#F7F3EA"></div><div style="background:#7A8A2E"></div><div style="background:#C08049"></div><div style="background:#C4D49A"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A564A">
+<div style="padding:0 10px">Forest<br>#1F3328</div><div style="padding:0 10px">Paper<br>#F7F3EA</div><div style="padding:0 10px">Hemp<br>#7A8A2E</div><div style="padding:0 10px">Bronze<br>#C08049</div><div style="padding:0 10px">Pistachio<br>#C4D49A</div>
+</div>
+<div style="padding:24px 32px 32px;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">C5</div><div style="font-size:20px;font-weight:600">Botanical Forest</div></div>
+<div style="font-size:15px;line-height:1.5;color:#5A564A">Deep forest green with bronze and pistachio. Signals natural, clean and science-backed, which builds trust for a THC brand.</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- HEADERS -->
+<section data-screen-label="Headers" style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;align-items:baseline;gap:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600">Headers</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C7768;letter-spacing:.08em">3 LAYOUTS · 1440PX DESKTOP</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:56px">
+
+<div id="H1" style="width:1440px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">H1</div><div style="font-size:20px;font-weight:600">Centered crest</div><div style="font-size:15px;color:#5A564A">· Logo in the middle with the nav split either side. Classic and premium, and gives the crest logo pride of place.</div></div>
+<div style="background:#F6F0E4;box-shadow:0 1px 0 rgba(0,0,0,.04)">
+<div style="background:#5E6B24;color:#F6F0E4;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:center;gap:48px;padding:11px 0"><span>Free shipping on retail orders $50+</span><span style="opacity:.55">·</span><span>Every batch third-party lab tested</span></div>
+<div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 56px;border-bottom:1px solid #E4DCCB">
+<div style="display:flex;gap:36px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#2E2B20"><span>Shop ▾</span><span>Perfect Dose</span><span>Recipes</span><span>Lab Tests</span></div>
+<img src="assets/logo.webp" alt="Hemp Beverage Company" style="height:84px;display:block">
+<div style="display:flex;gap:32px;justify-content:flex-end;align-items:center;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#2E2B20"><span>Reviews</span><span>Contact</span><span style="width:1px;height:20px;background:#D3C8B2"></span><span>Search</span><span>Account</span><span style="background:#2E2B20;color:#F6F0E4;padding:10px 16px">Cart · 0</span></div>
+</div>
+</div>
+</div>
+
+<div id="H2" style="width:1440px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">H2</div><div style="font-size:20px;font-weight:600">Floating over hero</div><div style="font-size:15px;color:#5A564A">· A transparent glass bar sits on top of the lifestyle photo and turns solid on scroll. Immersive and modern, so the imagery leads.</div></div>
+<div style="position:relative;height:560px;overflow:hidden;background:#1d1f1a">
+<img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,22,18,.55) 0%,rgba(20,22,18,.1) 35%,rgba(20,22,18,.65) 100%)"></div>
+<div style="position:absolute;top:0;left:0;right:0;text-align:center;font-family:'Instrument Sans',sans-serif;font-size:13px;color:#F6F0E4;padding:10px 0;background:rgba(20,22,18,.45);letter-spacing:.04em">Free shipping on retail orders $50+  ·  Not sold in AK &amp; ID</div>
+<div style="position:absolute;top:56px;left:40px;right:40px;display:flex;align-items:center;justify-content:space-between;padding:12px 14px 12px 28px;background:rgba(246,240,228,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(246,240,228,.25);border-radius:999px">
+<div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#F6F0E4;letter-spacing:.04em">HEMP BEVERAGE <span style="font-family:'Jost',sans-serif;font-size:13px;font-weight:500;letter-spacing:.3em;color:#E0B788">CO.</span></div>
+<div style="display:flex;gap:36px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:500;color:#F6F0E4"><span>Shop</span><span>Mocktail Creator</span><span>Wine</span><span>Perfect Dose</span><span>Recipes</span><span>Lab Tests</span></div>
+<div style="display:flex;gap:10px;align-items:center;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:500;color:#F6F0E4"><span style="padding:10px 14px">Search</span><span style="padding:10px 14px">Account</span><span style="background:#F6F0E4;color:#2E2B20;padding:11px 20px;border-radius:999px;font-weight:600">Cart (0)</span></div>
+</div>
+<div style="position:absolute;left:80px;bottom:72px;display:flex;flex-direction:column;gap:20px;max-width:760px">
+<div style="font-family:'Instrument Serif',serif;font-size:96px;line-height:.92;color:#F6F0E4;letter-spacing:-.02em">Sip smarter. <span style="font-style:italic">Feel better.</span></div>
+<div style="font-family:'Instrument Sans',sans-serif;font-size:20px;color:#F6F0E4">Upgrade your unwind without the hangovers.</div>
+</div>
+</div>
+</div>
+
+<div id="H3" style="width:1440px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">H3</div><div style="font-size:20px;font-weight:600">Shop-first with mega menu</div><div style="font-size:15px;color:#5A564A">· Shown with the Shop menu open. Products and the dosing guide are one hover away. Best for conversion and for a growing catalog.</div></div>
+<div style="background:#F7F3EA">
+<div style="background:#1F3328;color:#F7F3EA;font-family:'Hanken Grotesk',sans-serif;font-size:13px;display:flex;justify-content:space-between;padding:10px 56px"><span>888-420-3021</span><span style="font-weight:600">Free shipping on retail orders $50+</span><span>Wholesale login</span></div>
+<div style="display:flex;align-items:center;gap:48px;padding:16px 56px;border-bottom:1px solid #E2DCCB">
+<img src="assets/logo.webp" alt="Hemp Beverage Company" style="height:64px;display:block">
+<div style="display:flex;gap:6px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;color:#1F3328"><span style="background:#1F3328;color:#F7F3EA;padding:10px 16px;border-radius:6px">Shop ▴</span><span style="padding:10px 16px">Perfect Dose</span><span style="padding:10px 16px">Recipes</span><span style="padding:10px 16px">Lab Tests</span><span style="padding:10px 16px">Reviews</span></div>
+<div style="flex:1;display:flex;align-items:center;background:#fff;border:1px solid #DCD4C2;border-radius:6px;padding:12px 16px;font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#8A8577">Search drinks, recipes, doses…</div>
+<div style="display:flex;gap:20px;align-items:center;font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;color:#1F3328"><span>Account</span><span style="background:#C08049;color:#1F3328;padding:10px 18px;border-radius:6px">Cart · 0</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr) 1.15fr;gap:24px;padding:32px 56px 40px;background:#FBF8F2;border-bottom:1px solid #E2DCCB">
+<div style="display:flex;flex-direction:column;gap:14px"><div style="background:#EFEBE0;border-radius:8px;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="assets/product-mocktail-100mg.png" alt="" style="height:200px"></div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:18px;font-weight:600;color:#1F3328">Mocktail Creator</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#5A564A;line-height:1.5">Liquid THC for any drink · 50mg, 100mg, 2000mg pump</div></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="background:#EFEBE0;border-radius:8px;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="assets/product-rose-thc.png" alt="" style="height:200px"></div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:18px;font-weight:600;color:#1F3328">Non-Alcoholic Wine</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#5A564A;line-height:1.5">Rosé &amp; Chardonnay · with or without 50mg THC</div></div>
+<div style="display:flex;flex-direction:column;gap:14px"><div style="background:#EFEBE0;border-radius:8px;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="assets/products/re-leaf-muscle-support--2--Screenshot2025-09-07at10.42.43AM.png" alt="" style="height:200px"></div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:18px;font-weight:600;color:#1F3328">re:Leaf</div><div style="font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:#5A564A;line-height:1.5">Muscle &amp; recovery support</div></div>
+<div style="background:#1F3328;border-radius:8px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:16px">
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700">New to THC drinks?</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;line-height:1;color:#F7F3EA">Find your perfect dose in 3 steps.</div>
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:#E4E0D4;line-height:1.5">Start with 5–10mg, wait 15 minutes, adjust next time.</div>
+<div style="align-self:flex-start;background:#F7F3EA;color:#1F3328;font-family:'Hanken Grotesk',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:6px">Read the guide →</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTERS -->
+<section data-screen-label="Footers" style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;align-items:baseline;gap:20px"><div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:600">Footers</div><div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C7768;letter-spacing:.08em">3 LAYOUTS · 1440PX DESKTOP</div></div>
+<div style="display:flex;flex-wrap:wrap;gap:56px">
+
+<div id="F1" style="width:1440px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">F1</div><div style="font-size:20px;font-weight:600">Big sign-off + newsletter</div><div style="font-size:15px;color:#5A564A">· Ends with a giant brand line and an email signup to capture leads. Bold and memorable.</div></div>
+<div style="background:#1F3328;color:#F7F3EA;padding:80px 72px 32px;display:flex;flex-direction:column;gap:64px">
+<div style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;align-items:end">
+<div style="font-family:'Cormorant Garamond',serif;font-size:120px;font-weight:600;line-height:.88;letter-spacing:-.02em">Crafted for good vibes <span style="font-style:italic;color:#C4D49A">only.</span></div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:18px;line-height:1.5;color:#E4E0D4">New recipes, dosing tips and members-only offers. No hangovers, no spam.</div>
+<div style="display:flex;border-bottom:1.5px solid #F7F3EA;padding:10px 0;justify-content:space-between;font-family:'Hanken Grotesk',sans-serif;font-size:17px"><span style="color:#B8B4A8">Your email address</span><span style="font-weight:600">Subscribe →</span></div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr) 1.3fr;gap:40px;border-top:1px solid rgba(247,243,234,.18);padding-top:48px;font-family:'Hanken Grotesk',sans-serif">
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#E4E0D4"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700;margin-bottom:6px">Shop</div><span>Mocktail Creator</span><span>Non-Alcoholic Wine</span><span>re:Leaf</span><span>All products</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#E4E0D4"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700;margin-bottom:6px">Learn</div><span>Perfect Dose</span><span>Recipes</span><span>Lab Tests (COA)</span><span>FAQ</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#E4E0D4"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700;margin-bottom:6px">Company</div><span>Testimonials</span><span>In the News</span><span>Contact</span><span>Shipping &amp; Returns</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#E4E0D4"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700;margin-bottom:6px">Wholesale</div><span>Wholesale login</span><span>Onboarding info</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#E4E0D4;line-height:1.5"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C4D49A;font-weight:700;margin-bottom:6px">Say hi</div><span>10645 N Tatum Blvd., Suite C200-432<br>Phoenix, Arizona 85028</span><span style="color:#F7F3EA;font-weight:600">888-420-3021 · Support@hempbevco.com</span><span>Instagram · TikTok · YouTube · Facebook · X</span></div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:40px;border-top:1px solid rgba(247,243,234,.18);padding-top:24px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:#B8B4A8;line-height:1.5"><span style="max-width:820px">Must be 21+. Hemp-derived Delta-9 THC, ≤0.3% by dry weight, compliant with the 2018 Farm Bill. Not sold in Alaska &amp; Idaho. These statements have not been evaluated by the FDA.</span><span style="white-space:nowrap">© 2026 Hemp Bev Co · Privacy · Terms · Disclaimer</span></div>
+</div>
+</div>
+
+<div id="F2" style="width:1440px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">F2</div><div style="font-size:20px;font-weight:600">Clean & compact</div><div style="font-size:15px;color:#5A564A">· A light, tidy layout with the crest logo. Quiet and refined, and keeps the focus on the page above it.</div></div>
+<div style="background:#F6F0E4;color:#2E2B20;padding:64px 72px 28px;display:flex;flex-direction:column;gap:48px;border-top:1px solid #E4DCCB">
+<div style="display:grid;grid-template-columns:1.3fr repeat(4,1fr);gap:48px;font-family:'Jost',sans-serif">
+<div style="display:flex;flex-direction:column;gap:20px"><img src="assets/logo.webp" alt="Hemp Beverage Company" style="width:200px;display:block"><div style="font-size:15px;line-height:1.6;color:#5A564A;max-width:280px">No alcohol. No hangovers. Just better ways to unwind.</div></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#4A473D"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#A86E36;font-weight:600;margin-bottom:6px">Shop</div><span>Mocktail Creator</span><span>Non-Alcoholic Wine</span><span>re:Leaf</span><span>All products</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#4A473D"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#A86E36;font-weight:600;margin-bottom:6px">Learn</div><span>Perfect Dose</span><span>Recipes</span><span>Lab Tests</span><span>FAQ</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#4A473D"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#A86E36;font-weight:600;margin-bottom:6px">Support</div><span>Contact</span><span>Shipping &amp; Returns</span><span>Wholesale login</span><span>Wholesale onboarding</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#4A473D;line-height:1.5"><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#A86E36;font-weight:600;margin-bottom:6px">Contact</div><span>888-420-3021</span><span>Support@hempbevco.com</span><span>Phoenix, Arizona</span></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #E0D6C2;padding-top:24px;font-family:'Jost',sans-serif;font-size:13px;color:#7C7768"><span>© 2026 Hemp Bev Co · 21+ only · Farm Bill compliant</span><div style="display:flex;gap:24px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:#2E2B20"><span>Instagram</span><span>TikTok</span><span>YouTube</span><span>Facebook</span></div><span>Privacy · Terms · Refunds · Disclaimer</span></div>
+</div>
+</div>
+
+<div id="F3" style="width:1440px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;gap:12px;align-items:center"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;background:#2B2A22;color:#FBF8F2;padding:6px 12px;border-radius:3px">F3</div><div style="font-size:20px;font-weight:600">Trust-forward</div><div style="font-size:15px;color:#5A564A">· A row of proof points plus a final product CTA, which tackles legality and safety concerns before the visitor leaves.</div></div>
+<div style="background:#FBF8F2;color:#2E2B20">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #E2DCCB;border-bottom:1px solid #E2DCCB;font-family:'Instrument Sans',sans-serif">
+<div style="padding:32px 40px;display:flex;flex-direction:column;gap:6px;border-right:1px solid #E2DCCB"><div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#5E6B24">15 min</div><div style="font-size:15px;color:#5A564A">Average onset, like a cocktail</div></div>
+<div style="padding:32px 40px;display:flex;flex-direction:column;gap:6px;border-right:1px solid #E2DCCB"><div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#5E6B24">≤0.3% Δ9</div><div style="font-size:15px;color:#5A564A">Federally legal under the 2018 Farm Bill</div></div>
+<div style="padding:32px 40px;display:flex;flex-direction:column;gap:6px;border-right:1px solid #E2DCCB"><div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#5E6B24">Every batch</div><div style="font-size:15px;color:#5A564A">Third-party lab tested, with COAs online</div></div>
+<div style="padding:32px 40px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#5E6B24">4.8 ★</div><div style="font-size:15px;color:#5A564A">From 140 verified reviews</div></div>
+</div>
+<div style="background:#2E2B20;color:#F6F0E4;display:grid;grid-template-columns:1fr 1.6fr;gap:72px;padding:64px 72px 28px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:24px;align-items:center;background:#3A3729;border-radius:10px;padding:20px"><div style="width:120px;height:140px;background:#F6F0E4;border-radius:6px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0"><img src="assets/product-mocktail-100mg.png" alt="" style="height:130px"></div><div style="display:flex;flex-direction:column;gap:10px"><div style="font-family:'Instrument Serif',serif;font-size:32px;line-height:1">Make any drink a cannabis beverage.</div><div style="align-self:flex-start;background:#C98B4E;color:#2E2B20;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;padding:11px 18px;border-radius:999px">Shop Mocktail Creator</div></div></div>
+<div style="font-family:'Instrument Sans',sans-serif;font-size:14px;line-height:1.6;color:#CFC8B8">10645 N Tatum Blvd., Suite C200-432, Phoenix, AZ 85028<br><span style="color:#F6F0E4;font-weight:600">888-420-3021 · Support@hempbevco.com</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;font-family:'Instrument Sans',sans-serif">
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#DCD5C5"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E0B788;font-weight:600;margin-bottom:6px">Shop</div><span>Mocktail Creator</span><span>Non-Alcoholic Wine</span><span>re:Leaf</span><span>Wholesale</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#DCD5C5"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E0B788;font-weight:600;margin-bottom:6px">Learn</div><span>Perfect Dose</span><span>Recipes</span><span>Lab Tests</span><span>FAQ</span><span>In the News</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#DCD5C5"><div style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E0B788;font-weight:600;margin-bottom:6px">Follow</div><span>Instagram</span><span>TikTok</span><span>YouTube</span><span>Facebook</span><span>X / Twitter</span></div>
+</div>
+<div style="grid-column:1 / -1;display:flex;justify-content:space-between;gap:40px;border-top:1px solid rgba(246,240,228,.16);padding-top:24px;font-family:'Instrument Sans',sans-serif;font-size:13px;color:#B5AE9E;line-height:1.5"><span style="max-width:820px">For adults 21+ only. Contains hemp-derived Delta-9 THC. Do not drive or operate machinery. You may test positive on a drug test. Not evaluated by the FDA.</span><span style="white-space:nowrap">© 2026 Hemp Bev Co · Privacy · Terms · Refunds</span></div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
+</x-dc>
+</body>
+</html>

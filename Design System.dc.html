@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#FAF6EE;-webkit-font-smoothing:antialiased}
+a{color:#6F7D2B;text-decoration:none}a:hover{color:#A8703A}
+input::placeholder{color:#8B8775}input:focus{outline:none}
+@keyframes hbc-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes hbc-spin{to{transform:rotate(360deg)}}
+@keyframes hbc-ease{0%,12%{transform:translateX(0)}50%,62%{transform:translateX(var(--d))}100%{transform:translateX(0)}}
+@keyframes hbc-pour{0%,8%{height:6%}55%,80%{height:72%}100%{height:6%}}
+@keyframes hbc-bubble{0%{transform:translateY(0) scale(.6);opacity:0}15%{opacity:.9}100%{transform:translateY(-170px) scale(1);opacity:0}}
+@keyframes hbc-fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes hbc-foil{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes hbc-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.12)}66%{transform:translate(-30px,25px) scale(.92)}}
+@keyframes hbc-pulse{0%{box-shadow:0 0 0 0 rgba(200,147,90,.55)}100%{box-shadow:0 0 0 18px rgba(200,147,90,0)}}
+@keyframes hbc-float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+</style>
+</helmet>
+
+<div style="font-family:'Manrope',sans-serif;color:#23261A;background:#FAF6EE">
+
+<!-- COVER -->
+<section data-screen-label="00 Cover" style="position:relative;overflow:hidden;background:#262B17;color:#FAF6EE;padding:clamp(40px,6vw,88px) clamp(24px,5vw,72px);min-height:640px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 20%,rgba(200,147,90,.55) 0%,rgba(200,147,90,0) 60%),radial-gradient(50% 60% at 10% 100%,rgba(111,125,43,.7) 0%,rgba(111,125,43,0) 65%)"></div>
+<div style="position:absolute;inset:0;opacity:.18;background-image:radial-gradient(#CDD7B1 1.2px,transparent 1.4px);background-size:22px 22px"></div>
+<div style="position:relative;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+<div style="background:#FAF6EE;border-radius:18px;padding:12px 16px"><img src="assets/logo.webp" alt="Hemp Beverage Company" style="height:64px;display:block"></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#CDD7B1;letter-spacing:.08em">DESIGN SYSTEM · V1.0 · NOV 2026</div>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;gap:20px">
+<div style="font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#CDD7B1">Hemp Beverage Company</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(88px,14vw,220px);line-height:.8">Join the <span style="color:#C8935A">revolution.</span></div>
+<div style="font-size:19px;line-height:1.55;color:#E4E2D0;max-width:640px">The visual language for fast-acting, alcohol-free hemp drinks: warm copper, field olive and big, confident type. Built for good vibes only.</div>
+</div>
+<div style="position:relative;display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ toc }}" as="t" hint-placeholder-count="10"><a href="#{{ t.id }}" style="font-size:13px;font-weight:700;color:#FAF6EE;border:1px solid rgba(250,246,238,.25);border-radius:999px;padding:9px 14px" style-hover="background:#C8935A;color:#23261A;border-color:#C8935A"><span style="font-family:'JetBrains Mono',monospace;color:#CDD7B1;margin-right:6px">{{ t.n }}</span>{{ t.label }}</a></sc-for>
+</div>
+</section>
+
+<div style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(80px,9vw,128px);padding-bottom:120px">
+
+<!-- 01 BRAND -->
+<section id="brand" data-screen-label="01 Brand" style="display:flex;flex-direction:column;gap:32px;padding-top:96px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">01</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Brand essentials</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">The crest is our signature. It always sits on cream or white. On dark backgrounds, place it on a cream plate; never recolor it.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;min-height:280px"><img src="assets/logo.webp" alt="" style="width:220px"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8B8775">PRIMARY · ON CREAM</div></div>
+<div style="background:#262B17;border-radius:22px;padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;min-height:280px"><div style="background:#FAF6EE;border-radius:18px;padding:16px 20px"><img src="assets/logo.webp" alt="" style="width:180px;display:block"></div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#CDD7B1">ON DARK · CREAM PLATE</div></div>
+<div style="background:#C8935A;border-radius:22px;padding:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:280px"><div style="font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.85;color:#23261A;text-align:center">Hemp Beverage<br>Company</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#23261A;margin-top:8px">WORDMARK FALLBACK · TIGHT SPACES</div></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+<sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
+<div style="background:#F3ECDD;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:8px"><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:1">{{ v.t }}</div><div style="font-size:15px;line-height:1.55;color:#4A473D">{{ v.d }}</div></div>
+</sc-for>
+</div>
+</section>
+
+<!-- 02 COLOR -->
+<section id="color" data-screen-label="02 Color" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">02</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Color</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">Every hue comes from the crest: copper rings, hemp-olive lettering and the sage laurel. Cream is our canvas, and deep olive-ink replaces black.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+<div style="background:#C8935A;border-radius:22px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;color:#23261A"><div style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:.9">Copper</div><div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6">--hbc-copper-500<br>#C8935A · CTAs, accents</div></div>
+<div style="background:#6F7D2B;border-radius:22px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;color:#FAF6EE"><div style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:.9">Hemp Olive</div><div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6">--hbc-olive-500<br>#6F7D2B · brand, success</div></div>
+<div style="background:#CDD7B1;border-radius:22px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;color:#23261A"><div style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:.9">Sage</div><div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6">--hbc-sage<br>#CDD7B1 · soft fills, tags</div></div>
+<div style="background:#23261A;border-radius:22px;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;color:#FAF6EE"><div style="font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:.9">Olive Ink</div><div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6">--hbc-ink<br>#23261A · text, dark UI</div></div>
+</div>
+<sc-for list="{{ scales }}" as="s" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-family:'Bebas Neue',sans-serif;font-size:28px">{{ s.name }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8B8775">{{ s.note }}</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));border-radius:16px;overflow:hidden;border:1px solid #E6DDC9">
+<sc-for list="{{ s.steps }}" as="c" hint-placeholder-count="9">
+<div style="background:{{ c.hex }};color:{{ c.fg }};height:120px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.5"><span style="font-weight:500">{{ c.k }}</span><span>{{ c.hex }}</span></div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Usage ratio</div>
+<div style="display:flex;height:64px;border-radius:12px;overflow:hidden"><div style="flex:60;background:#FAF6EE;border:1px solid #E6DDC9;border-radius:12px 0 0 12px"></div><div style="flex:22;background:#23261A"></div><div style="flex:10;background:#6F7D2B"></div><div style="flex:6;background:#C8935A"></div><div style="flex:2;background:#CDD7B1"></div></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px 20px;font-size:14px;color:#4A473D"><span><b>60%</b> Cream</span><span><b>22%</b> Ink</span><span><b>10%</b> Olive</span><span><b>6%</b> Copper</span><span><b>2%</b> Sage</span></div>
+</div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Accessible pairings (WCAG)</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<div style="background:#FAF6EE;color:#23261A;border:1px solid #E6DDC9;border-radius:10px;padding:12px;font-weight:700;font-size:14px">Ink / Cream<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400">15.1 · AAA</span></div>
+<div style="background:#23261A;color:#C8935A;border-radius:10px;padding:12px;font-weight:700;font-size:14px">Copper / Ink<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400">6.4 · AA</span></div>
+<div style="background:#6F7D2B;color:#FAF6EE;border-radius:10px;padding:12px;font-weight:700;font-size:14px">Cream / Olive<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400">4.8 · AA</span></div>
+<div style="background:#C8935A;color:#23261A;border-radius:10px;padding:12px;font-weight:700;font-size:14px">Ink / Copper<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400">6.4 · AA</span></div>
+<div style="background:#FAF6EE;color:#A8703A;border:1px solid #E6DDC9;border-radius:10px;padding:12px;font-weight:700;font-size:14px">Copper-600 / Cream<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400">3.9 · large only</span></div>
+<div style="background:#FAF6EE;color:#C8935A;border:1px dashed #B5452E;border-radius:10px;padding:12px;font-weight:700;font-size:14px">Copper-500 / Cream<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:400;color:#B5452E">2.4 · avoid text</span></div>
+</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+<sc-for list="{{ semantic }}" as="m" hint-placeholder-count="4">
+<div style="display:flex;gap:14px;align-items:center;background:#FFFDF8;border:1px solid #E6DDC9;border-radius:16px;padding:14px"><div style="width:48px;height:48px;border-radius:12px;background:{{ m.hex }};flex-shrink:0"></div><div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:700;font-size:15px">{{ m.name }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6B6754">{{ m.hex }} · {{ m.use }}</span></div></div>
+</sc-for>
+</div>
+</section>
+
+<!-- 03 GRADIENTS -->
+<section id="gradients" data-screen-label="03 Gradients" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">03</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Gradient palettes</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">Gradients are soft and warm, like light through a glass. Use them for hero grounds, promo cards and foil type, never behind body copy.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+<sc-for list="{{ gradients }}" as="g" hint-placeholder-count="8">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="height:220px;border-radius:22px;background:{{ g.css }};position:relative;overflow:hidden"><div style="position:absolute;left:20px;bottom:16px;font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:{{ g.fg }}">{{ g.name }}</div></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B6754;line-height:1.5;padding:0 4px">{{ g.code }}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- 04 ABSTRACTS -->
+<section id="abstracts" data-screen-label="04 Backgrounds" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">04</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Background abstracts</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">These are pure-CSS grounds for heroes, section breaks and promo tiles. They're lightweight, infinitely scalable and always on-palette.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:16px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:320px;border-radius:22px;overflow:hidden;position:relative;background:#262B17">{{ meshLive }}</div><div style="font-size:14px;color:#4A473D"><b>Golden Mesh (animated).</b> Drifting copper and olive blobs for hero grounds.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:320px;border-radius:22px;overflow:hidden;position:relative;background:radial-gradient(120% 90% at 50% 110%,#C8935A 0%,#E8C7A1 30%,#FAF6EE 65%)"><div style="position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 110%,rgba(250,246,238,.0) 0deg 6deg,rgba(250,246,238,.55) 6deg 9deg)"></div></div><div style="font-size:14px;color:#4A473D"><b>Sunburst.</b> Celebratory rays for promos and "Cheers" moments.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:320px;border-radius:22px;overflow:hidden;position:relative;background:#F3ECDD"><div style="position:absolute;inset:0;background:repeating-radial-gradient(circle at 30% 120%,transparent 0 22px,rgba(111,125,43,.18) 22px 23px)"></div><div style="position:absolute;inset:0;background:repeating-radial-gradient(circle at 90% -10%,transparent 0 30px,rgba(200,147,90,.22) 30px 31px)"></div></div><div style="font-size:14px;color:#4A473D"><b>Topo Rings.</b> Contour lines that echo the crest's rings. A quiet backdrop for education pages.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:320px;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(180deg,#23261A 0%,#3A4218 100%)"><div style="position:absolute;left:-10%;right:-10%;bottom:-40%;height:90%;border-radius:50%;background:radial-gradient(closest-side,rgba(200,147,90,.9),rgba(200,147,90,0))"></div><div style="position:absolute;left:30%;right:-20%;bottom:-55%;height:90%;border-radius:50%;background:radial-gradient(closest-side,rgba(205,215,177,.6),rgba(205,215,177,0))"></div></div><div style="font-size:14px;color:#4A473D"><b>Horizon Glow.</b> Night-pour mood for evening and wine stories.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:320px;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(135deg,#E2E8CC,#FAF6EE 55%,#F4E2CC)"><div style="position:absolute;inset:0;opacity:.5;mix-blend-mode:multiply;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .14 0 0 0 0 .15 0 0 0 0 .1 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div></div><div style="font-size:14px;color:#4A473D"><b>Paper Grain.</b> A tactile, label-paper texture. Use it at 30–50% opacity over any fill.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:320px;border-radius:22px;overflow:hidden;position:relative;background:#FAF6EE"><div style="position:absolute;width:62%;aspect-ratio:1;left:-12%;top:-20%;border-radius:50%;background:#CDD7B1"></div><div style="position:absolute;width:46%;aspect-ratio:1;right:-8%;bottom:-18%;border-radius:50%;background:#C8935A"></div><div style="position:absolute;width:22%;aspect-ratio:1;right:30%;top:18%;border-radius:50%;border:2px solid #6F7D2B"></div><div style="position:absolute;width:12%;aspect-ratio:1;left:40%;bottom:16%;border-radius:50%;background:#23261A"></div></div><div style="font-size:14px;color:#4A473D"><b>Citrus Slices.</b> Bold geometric circles, playful for recipes and social posts.</div></div>
+</div>
+</section>
+
+<!-- 05 PATTERNS -->
+<section id="patterns" data-screen-label="05 Patterns" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">05</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Geometric patterns</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">Repeatable tiles drawn from the crest: its dotted ring, double frame and laurel rhythm. Use them on packaging inserts, section dividers, cards and social posts.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px">
+<sc-for list="{{ patterns }}" as="p" hint-placeholder-count="8">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="height:220px;border-radius:18px;background-color:{{ p.bg }};background-image:{{ p.img }};background-size:{{ p.size }};border:1px solid #E6DDC9"></div>
+<div style="display:flex;justify-content:space-between;gap:8px;padding:0 4px"><span style="font-weight:700;font-size:15px">{{ p.name }}</span><span style="font-size:13px;color:#8B8775">{{ p.use }}</span></div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- 06 TYPE -->
+<section id="type" data-screen-label="06 Typography" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">06</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Typography</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">Bebas Neue shouts the headline, the way it does on our packaging. Manrope does the explaining: dosing, legality, recipes. Never set body copy in Bebas.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+<div style="background:#23261A;color:#FAF6EE;border-radius:22px;padding:36px;display:flex;flex-direction:column;gap:16px;min-height:340px;justify-content:space-between">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#CDD7B1">DISPLAY · BEBAS NEUE 400</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:180px;line-height:.8;color:#C8935A">Aa</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.04em;line-height:1.1">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789 $%&amp;?!→</div>
+</div>
+<div style="background:#F3ECDD;border-radius:22px;padding:36px;display:flex;flex-direction:column;gap:16px;min-height:340px;justify-content:space-between">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6B6754">TEXT · MANROPE 400–800</div>
+<div style="font-family:'Manrope',sans-serif;font-size:150px;font-weight:700;line-height:.85;letter-spacing:-.04em">Aa</div>
+<div style="display:flex;gap:18px;flex-wrap:wrap;font-size:22px"><span style="font-weight:400">Regular</span><span style="font-weight:500">Medium</span><span style="font-weight:600">Semibold</span><span style="font-weight:700">Bold</span><span style="font-weight:800">Extrabold</span></div>
+</div>
+</div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;overflow:hidden">
+<sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="10">
+<div style="display:grid;grid-template-columns:minmax(150px,200px) minmax(0,1fr);gap:24px;align-items:center;padding:20px 28px;border-bottom:1px solid #EFE7D6">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6B6754;line-height:1.6"><span style="color:#23261A;font-weight:500">{{ t.token }}</span><br>{{ t.spec }}</div>
+<div style="font-family:{{ t.family }};font-size:{{ t.size }};font-weight:{{ t.weight }};line-height:{{ t.lh }};letter-spacing:{{ t.ls }};text-transform:{{ t.tt }};color:{{ t.color }};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ t.sample }}</div>
+</div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#A8703A">Always start small</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:.88">How to find your perfect dose</div>
+<div style="font-size:16px;line-height:1.6;color:#4A473D">Start with 5–10mg. You should feel something in 15 to 20 minutes. Wait a full day before adjusting.</div>
+<div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:#8B8775">EYEBROW → DISPLAY → BODY</div>
+</div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:6px">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:120px;line-height:.8;color:#6F7D2B">15<span style="font-size:48px;color:#23261A"> MIN</span></div>
+<div style="font-size:16px;color:#4A473D">Average onset</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:.85;color:#C8935A;margin-top:12px">400%</div>
+<div style="font-size:16px;color:#4A473D">Greater bioavailability</div>
+<div style="font-size:12px;font-family:'JetBrains Mono',monospace;color:#8B8775;margin-top:8px">BIG NUMBERS · ALWAYS BEBAS</div>
+</div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="background:#6F7D2B;color:#FAF6EE;border-radius:999px;font-size:12px;font-weight:800;padding:4px 10px">DO</span><span style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:.9">Sip smarter. Feel better.</span></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="background:#6F7D2B;color:#FAF6EE;border-radius:999px;font-size:12px;font-weight:800;padding:4px 10px">DO</span><span style="font-size:16px;line-height:1.5">Sentence case, warm and plain-spoken body copy.</span></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="background:#B5452E;color:#FAF6EE;border-radius:999px;font-size:12px;font-weight:800;padding:4px 10px">DON'T</span><span style="font-family:'Bebas Neue',sans-serif;font-size:18px;line-height:1.2;color:#6B6754">Long paragraphs set in Bebas are hard to read and feel like shouting at the customer.</span></div>
+<div style="display:flex;gap:10px;align-items:flex-start"><span style="background:#B5452E;color:#FAF6EE;border-radius:999px;font-size:12px;font-weight:800;padding:4px 10px">DON'T</span><span style="font-size:16px;line-height:1.5;font-style:italic;color:#6B6754">Faux italics or letter-spaced lowercase.</span></div>
+</div>
+</div>
+</section>
+
+<!-- 07 FOUNDATIONS -->
+<section id="foundations" data-screen-label="07 Spacing Radius Elevation" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">07</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Space, shape &amp; depth</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775;margin-bottom:6px">Spacing · 4px base</div>
+<sc-for list="{{ spacing }}" as="s" hint-placeholder-count="10"><div style="display:flex;align-items:center;gap:14px"><span style="font-family:'JetBrains Mono',monospace;font-size:12px;width:92px;color:#6B6754">{{ s.k }}</span><div style="height:14px;width:{{ s.px }};background:#C8935A;border-radius:3px"></div><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8B8775">{{ s.px }}</span></div></sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Corner radius</div>
+<div style="display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end">
+<sc-for list="{{ radii }}" as="r" hint-placeholder-count="6"><div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div style="width:72px;height:72px;background:#CDD7B1;border:2px solid #6F7D2B;border-radius:{{ r.v }}"></div><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B6754;text-align:center">{{ r.k }}<br>{{ r.v }}</span></div></sc-for>
+</div>
+</div>
+<div style="background:#F3ECDD;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Elevation</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+<sc-for list="{{ shadows }}" as="s" hint-placeholder-count="4"><div style="background:#FFFDF8;border-radius:16px;height:96px;box-shadow:{{ s.v }};display:flex;align-items:flex-end;padding:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B6754">{{ s.k }}</div></sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 08 EFFECTS -->
+<section id="effects" data-screen-label="08 Effects" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">08</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Effects</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">Use these sparingly, one hero effect per view. They add polish, not noise.</div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:16px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:300px;border-radius:22px;overflow:hidden;position:relative"><img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div style="position:absolute;left:20px;right:20px;bottom:20px;padding:20px;border-radius:18px;background:rgba(250,246,238,.16);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(250,246,238,.35);color:#FAF6EE"><div style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:1">Cheers to good vibes</div><div style="font-size:14px;margin-top:4px">Frosted glass · blur 16 · 16% cream</div></div></div><div style="font-size:14px;color:#4A473D"><b>Frosted glass.</b> Use it for overlays on photography and for the sticky header on scroll.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:300px;border-radius:22px;overflow:hidden;position:relative;background:#23261A;display:flex;align-items:center;justify-content:center">{{ foilText }}</div><div style="font-size:14px;color:#4A473D"><b>Copper foil.</b> Animated metallic gradient type for launches and hero words only.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:300px;border-radius:22px;overflow:hidden;position:relative;background:#262B17"><img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);mix-blend-mode:luminosity;opacity:.9"><div style="position:absolute;inset:0;background:linear-gradient(135deg,#6F7D2B,#C8935A);mix-blend-mode:multiply"></div><div style="position:absolute;left:24px;bottom:20px;font-family:'Bebas Neue',sans-serif;font-size:44px;color:#FAF6EE">Duotone</div></div><div style="font-size:14px;color:#4A473D"><b>Olive-copper duotone.</b> Unifies mixed photography and stock imagery.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:300px;border-radius:22px;overflow:hidden;position:relative"><img src="assets/hero-gathering.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,38,26,0) 35%,rgba(35,38,26,.85) 100%)"></div><div style="position:absolute;left:24px;bottom:20px;right:24px;font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:.88;color:#FAF6EE">Protection gradient</div></div><div style="font-size:14px;color:#4A473D"><b>Protection gradient.</b> Ink fades from 35% down, so type on photos stays readable.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:300px;border-radius:22px;overflow:hidden;position:relative;background:#FAF6EE;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0"><div style="font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:.82;color:transparent;-webkit-text-stroke:2px #6F7D2B">No hangover</div><div style="font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:.82;color:#6F7D2B">No hangover</div></div><div style="font-size:14px;color:#4A473D"><b>Outline echo.</b> Stroke-plus-solid repetition for marketing banners.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:300px;border-radius:22px;overflow:hidden;position:relative;background:#F3ECDD;display:flex;align-items:center;justify-content:center;gap:28px">{{ pulseDot }}<div style="background:#FFFDF8;border-radius:22px;padding:6px;box-shadow:0 0 0 1px #E6DDC9,0 24px 48px -16px rgba(200,147,90,.55)"><div style="border:1.5px solid #C8935A;border-radius:17px;padding:18px 22px;font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1">Double frame</div></div></div><div style="font-size:14px;color:#4A473D"><b>Copper glow and crest frame.</b> The pulse marks live and new items. The double frame comes from the logo's border.</div></div>
+</div>
+</section>
+
+<!-- 09 MOTION -->
+<section id="motion" data-screen-label="09 Motion" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">09</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Motion &amp; animation</div><div style="font-size:17px;color:#4A473D;max-width:640px;line-height:1.6">Motion should feel like a pour: it starts quick and settles smooth. Nothing bounces aggressively or spins without purpose. Respect prefers-reduced-motion.</div></div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Easing curves</div>
+{{ easeDemos }}
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px">
+<sc-for list="{{ durations }}" as="d" hint-placeholder-count="4"><div style="background:#F3ECDD;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1">{{ d.v }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#23261A">{{ d.k }}</span><span style="font-size:13px;color:#4A473D">{{ d.use }}</span></div></sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:280px;border-radius:22px;background:#F3ECDD;display:flex;align-items:flex-end;justify-content:center;padding-bottom:36px;position:relative;overflow:hidden">{{ pourDemo }}</div><div style="font-size:14px;color:#4A473D"><b>The Pour.</b> A fill that rises, used for loaders, dose meters and progress.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:280px;border-radius:22px;background:#23261A;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">{{ spinBadge }}</div><div style="font-size:14px;color:#4A473D"><b>Revolution Badge.</b> Slowly rotating crest text (24s loop) for hero stickers and CTAs.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:280px;border-radius:22px;background:#F3ECDD;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;position:relative;overflow:hidden">{{ fadeDemo }}<button onClick="{{ replay }}" style="border:1px solid #23261A;background:transparent;border-radius:999px;padding:8px 16px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;cursor:pointer;color:#23261A" style-hover="background:#23261A;color:#FAF6EE">Replay ↻</button></div><div style="font-size:14px;color:#4A473D"><b>Rise-in reveal.</b> 28px plus fade over 800ms with an 80ms stagger. Used for all scroll reveals.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:280px;border-radius:22px;background:linear-gradient(180deg,#E8C7A1,#C8935A);position:relative;overflow:hidden">{{ bubbles }}</div><div style="font-size:14px;color:#4A473D"><b>Fizz.</b> Ambient bubbles behind drink shots and on add-to-cart success.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:280px;border-radius:22px;background:#FAF6EE;border:1px solid #E6DDC9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">{{ floatDemo }}</div><div style="font-size:14px;color:#4A473D"><b>Float.</b> A gentle 6s bob for hero product renders.</div></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="height:280px;border-radius:22px;background:#FAF6EE;border:1px solid #E6DDC9;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:20px">
+<div style="background:#23261A;color:#FAF6EE;padding:14px 22px;border-radius:999px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;cursor:pointer;transition:transform .25s cubic-bezier(.22,1,.36,1),background .15s" style-hover="transform:translateY(-3px);background:#3A4218" style-active="transform:scale(.96)">Hover &amp; press me</div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:16px;padding:18px;width:140px;cursor:pointer;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateY(-6px);box-shadow:0 24px 40px -18px rgba(35,38,26,.35)"><div style="height:60px;background:#CDD7B1;border-radius:10px"></div><div style="font-size:13px;font-weight:700;margin-top:10px">Card lift</div></div>
+</div><div style="font-size:14px;color:#4A473D"><b>Micro-interactions.</b> Buttons lift 3px and press to 96%. Cards lift 6px and gain a soft shadow.</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px"><div style="border-radius:22px;background:#FFFDF8;border:1px solid #E6DDC9;overflow:hidden;padding:22px 0">{{ marquee }}</div><div style="font-size:14px;color:#4A473D"><b>Press marquee.</b> An endless 40s linear scroll for the "As featured in" logos and promo tickers. Pause on hover.</div></div>
+</section>
+
+<!-- 10 COMPONENTS -->
+<section id="components" data-screen-label="10 Components" style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E6DDC9;padding-bottom:24px"><div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#A8703A">10</div><div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:.85">Components &amp; cards</div></div>
+
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:20px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Buttons</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<button style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 26px;height:52px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;transition:transform .25s cubic-bezier(.22,1,.36,1)" style-hover="background:#3A4218;transform:translateY(-2px)" style-active="transform:scale(.96)">Primary · Shop now</button>
+<button style="border:none;cursor:pointer;background:#C8935A;color:#23261A;border-radius:999px;padding:0 26px;height:52px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;transition:transform .25s cubic-bezier(.22,1,.36,1)" style-hover="background:#D9A772;transform:translateY(-2px)" style-active="transform:scale(.96)">Copper · Add to cart</button>
+<button style="cursor:pointer;background:transparent;color:#23261A;border:1.5px solid #23261A;border-radius:999px;padding:0 26px;height:52px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em" style-hover="background:#23261A;color:#FAF6EE">Secondary</button>
+<button style="cursor:pointer;background:transparent;color:#23261A;border:none;padding:0 8px;height:52px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#C8935A;text-decoration-thickness:2px" style-hover="color:#A8703A">Text link →</button>
+<button style="border:none;background:#E6DDC9;color:#8B8775;border-radius:999px;padding:0 26px;height:52px;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;cursor:not-allowed">Sold out</button>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<button style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 16px;height:36px;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.06em">Small</button>
+<button style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 22px;height:44px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em">Medium</button>
+<button style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 32px;height:60px;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.06em">Large</button>
+<button style="border:none;cursor:pointer;width:44px;height:44px;border-radius:50%;background:#23261A;color:#FAF6EE;font-size:20px" style-hover="background:#C8935A;color:#23261A">+</button>
+<button style="cursor:pointer;width:44px;height:44px;border-radius:50%;background:transparent;border:1.5px solid #23261A;color:#23261A;font-size:18px" style-hover="background:#23261A;color:#FAF6EE">→</button>
+<div style="display:flex;align-items:center;border:1.5px solid #23261A;border-radius:999px;height:44px;overflow:hidden"><button onClick="{{ qtyDown }}" style="border:none;background:transparent;width:44px;height:44px;font-size:18px;cursor:pointer;color:#23261A">−</button><span style="min-width:28px;text-align:center;font-weight:800;font-size:15px">{{ qty }}</span><button onClick="{{ qtyUp }}" style="border:none;background:transparent;width:44px;height:44px;font-size:18px;cursor:pointer;color:#23261A">+</button></div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Badges &amp; tags</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="background:#6F7D2B;color:#FAF6EE;font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 11px;border-radius:999px">BEST SELLER</span>
+<span style="background:#C8935A;color:#23261A;font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 11px;border-radius:999px">−39%</span>
+<span style="background:#23261A;color:#FAF6EE;font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 11px;border-radius:999px">NEW</span>
+<span style="background:#CDD7B1;color:#3A4218;font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 11px;border-radius:999px">50MG THC</span>
+<span style="background:#F3ECDD;color:#23261A;border:1px solid #E6DDC9;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px">Alcohol-free</span>
+<span style="background:#F3ECDD;color:#23261A;border:1px solid #E6DDC9;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px">Lab tested</span>
+<span style="background:transparent;color:#B5452E;border:1px solid #B5452E;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px">21+ only</span>
+<span style="background:#E6DDC9;color:#6B6754;font-size:12px;font-weight:800;letter-spacing:.06em;padding:6px 11px;border-radius:999px">SOLD OUT</span>
+</div>
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775;margin-top:6px">Filter chips</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ chips }}" as="c" hint-placeholder-count="5"><button onClick="{{ c.toggle }}" style="cursor:pointer;border:1.5px solid #23261A;border-radius:999px;padding:9px 15px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;background:{{ c.bg }};color:{{ c.fg }}">{{ c.label }}</button></sc-for>
+</div>
+</div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775">Form controls</div>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Email</span><input placeholder="you@email.com" style="height:50px;border:1.5px solid #DCD2BB;border-radius:14px;padding:0 16px;font-family:'Manrope',sans-serif;font-size:15px;background:#FFFDF8;color:#23261A"></label>
+<label style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:700">Focused</span><input value="hello@hempbevco.com" style="height:50px;border:1.5px solid #23261A;box-shadow:0 0 0 4px rgba(200,147,90,.3);border-radius:14px;padding:0 16px;font-family:'Manrope',sans-serif;font-size:15px;background:#FFFDF8;color:#23261A"></label>
+<div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center">
+<button onClick="{{ toggleSwitch }}" style="border:none;cursor:pointer;width:52px;height:30px;border-radius:999px;background:{{ switchBg }};position:relative;transition:background .25s"><span style="position:absolute;top:3px;left:{{ switchLeft }};width:24px;height:24px;border-radius:50%;background:#FAF6EE;transition:left .25s cubic-bezier(.22,1,.36,1)"></span></button><span style="font-size:14px;font-weight:600;margin-left:-14px">Subscribe &amp; save</span>
+<span style="display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600"><span style="width:22px;height:22px;border-radius:6px;background:#23261A;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-size:13px">✓</span>I am 21 or older</span>
+<span style="display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600"><span style="width:22px;height:22px;border-radius:50%;border:6px solid #C8935A;box-sizing:border-box"></span>100mg</span>
+</div>
+</div>
+</div>
+
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8B8775;margin-top:8px">Cards</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#F3ECDD;border-radius:22px;padding:12px 12px 18px;transition:transform .45s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateY(-6px)">
+<div style="position:relative;background:#FFFDF8;border-radius:16px;aspect-ratio:1/1.05;display:flex;align-items:center;justify-content:center;overflow:hidden"><img src="assets/product-mocktail-100mg.png" alt="" style="max-height:88%;max-width:82%;object-fit:contain"><span style="position:absolute;top:12px;left:12px;background:#6F7D2B;color:#FAF6EE;font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px">BEST SELLER</span></div>
+<div style="padding:0 6px;display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;color:#C8935A;letter-spacing:2px">★★★★★ <span style="color:#6B6754;letter-spacing:0;font-weight:600">101</span></div><div style="font-weight:800;font-size:16px;line-height:1.3">Cannabis Mocktail Creator · 100mg</div><div style="font-size:13px;color:#6B6754">20 servings · 5mg each</div></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:0 6px"><span style="font-family:'Bebas Neue',sans-serif;font-size:30px">$28.95</span><button style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 16px;height:40px;font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.06em" style-hover="background:#C8935A;color:#23261A">Add +</button></div>
+</div>
+<div style="display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:#FFFDF8;border:1px solid #E6DDC9;transition:transform .45s cubic-bezier(.22,1,.36,1)" style-hover="transform:translateY(-6px)">
+<div style="aspect-ratio:4/3;background:#CDD7B1;overflow:hidden"><img src="assets/recipe-mojito.png" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;gap:6px"><span style="background:#CDD7B1;color:#3A4218;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px">5 MIN</span><span style="background:#F3ECDD;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px">EASY</span></div><div style="font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:.95">Mojito Mocktail</div><div style="font-size:14px;color:#4A473D;line-height:1.5">Mint, lime, soda and your perfect dose.</div><a href="#" style="font-weight:800;font-size:14px;color:#23261A;margin-top:4px">View recipe →</a></div>
+</div>
+<div style="background:#23261A;color:#FAF6EE;border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:380px">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:90px;line-height:.5;color:#C8935A;height:44px">“</div>
+<div style="font-size:19px;line-height:1.5;font-weight:500">Flavor was totally neutral with no bitter aftertaste. Perfect for hanging out after work.</div>
+<div style="display:flex;align-items:center;gap:12px;border-top:1px solid #3B4224;padding-top:16px"><div style="width:44px;height:44px;border-radius:50%;background:#C8935A;color:#23261A;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:24px">B</div><div><div style="font-weight:800">Brian</div><div style="font-size:13px;color:#CDD7B1">Verified buyer · ★★★★★</div></div></div>
+</div>
+<div style="background:#6F7D2B;color:#FAF6EE;border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px;min-height:380px;position:relative;overflow:hidden">
+<div style="position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:2px dashed rgba(250,246,238,.35)"></div>
+<div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#E2E8CC">Dose guide</div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:.9">Find your sweet spot</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:auto">
+<sc-for list="{{ doses }}" as="d" hint-placeholder-count="3"><div style="display:flex;justify-content:space-between;align-items:center;background:rgba(250,246,238,.12);border-radius:12px;padding:10px 14px"><span style="font-weight:700;font-size:14px">{{ d.l }}</span><span style="font-family:'Bebas Neue',sans-serif;font-size:24px">{{ d.v }}</span></div></sc-for>
+</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:6px"><div style="font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.85;color:#6F7D2B">4.8★</div><div style="font-weight:700">140 verified reviews</div><div style="font-size:13px;color:#6B6754">Stat card</div></div>
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:24px;display:flex;justify-content:space-between;align-items:center;gap:16px"><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:11px;font-weight:800;letter-spacing:.14em;color:#8B8775">CERTIFICATE OF ANALYSIS</div><div style="font-weight:800;font-size:16px">Mocktail Creator · 100mg (50mL)</div><div style="font-size:13px;color:#6F7D2B;font-weight:700">● Passed · Δ9 ≤ 0.3%</div></div><button style="cursor:pointer;flex-shrink:0;width:44px;height:44px;border-radius:50%;background:transparent;border:1.5px solid #23261A;font-size:18px" style-hover="background:#23261A;color:#FAF6EE">↗</button></div>
+<div style="border-radius:22px;padding:24px;background:linear-gradient(135deg,#E8C7A1,#C8935A);display:flex;justify-content:space-between;align-items:flex-end;gap:12px;min-height:130px;overflow:hidden;position:relative"><div style="font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:.9;color:#23261A">Non-alcoholic<br>wine →</div><img src="assets/product-rose-thc.png" alt="" style="height:150px;margin:-20px -10px -40px 0"></div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+<div style="background:#FFFDF8;border:1px solid #E6DDC9;border-radius:22px;padding:12px 28px">
+<sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+<div style="border-bottom:1px solid #EFE7D6">
+<button onClick="{{ f.toggle }}" style="width:100%;border:none;background:transparent;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;text-align:left;font-family:'Manrope',sans-serif;font-size:16px;font-weight:800;color:#23261A">{{ f.q }}<span style="width:32px;height:32px;flex-shrink:0;border-radius:50%;background:{{ f.iconBg }};color:{{ f.iconFg }};display:flex;align-items:center;justify-content:center;font-size:18px;transform:{{ f.rot }};transition:transform .25s cubic-bezier(.22,1,.36,1)">+</span></button>
+<sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><div style="padding:0 48px 20px 0;font-size:15px;line-height:1.6;color:#4A473D">{{ f.a }}</div></sc-if>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:14px;background:#23261A;color:#FAF6EE;border-radius:16px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(35,38,26,.6)"><div style="width:48px;height:48px;background:#FAF6EE;border-radius:10px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0"><img src="assets/product-mocktail-50mg.png" alt="" style="height:44px"></div><div style="flex:1"><div style="font-weight:800;font-size:14px">Added to cart</div><div style="font-size:13px;color:#CDD7B1">Mocktail Creator · 50mg</div></div><span style="font-family:'Bebas Neue',sans-serif;font-size:19px;color:#C8935A;letter-spacing:.04em">View cart</span></div>
+<div style="display:flex;align-items:center;gap:12px;background:#E2E8CC;color:#3A4218;border-radius:16px;padding:14px 16px;font-weight:700;font-size:14px"><span style="width:24px;height:24px;border-radius:50%;background:#6F7D2B;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-size:12px">✓</span>You're on the list. Cheers!</div>
+<div style="display:flex;align-items:center;gap:12px;background:#F7E3D9;color:#7A2E1E;border-radius:16px;padding:14px 16px;font-weight:700;font-size:14px"><span style="width:24px;height:24px;border-radius:50%;background:#B5452E;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-size:12px">!</span>Sorry, we can't ship to Alaska or Idaho.</div>
+<div style="background:#FAF6EE;border:1px solid #E6DDC9;border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;box-shadow:0 30px 60px -24px rgba(35,38,26,.35)"><img src="assets/logo.webp" alt="" style="height:56px"><div style="font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:.95">Are you 21 or older?</div><div style="display:flex;gap:8px"><button style="border:none;cursor:pointer;background:#23261A;color:#FAF6EE;border-radius:999px;padding:0 22px;height:44px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em">Yes, I'm 21+</button><button style="cursor:pointer;background:transparent;border:1.5px solid #23261A;border-radius:999px;padding:0 22px;height:44px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:#23261A">No</button></div></div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { qty: 1, sw: true, chips: { 'All': true }, faq: 0, replay: 0 };
+  renderVals() {
+    const h = React.createElement, S = this.state;
+    const scale = (name, note, arr) => ({ name, note, steps: arr.map(([k, hex, dark]) => ({ k, hex, fg: dark ? '#FAF6EE' : '#23261A' })) });
+    const ease = [['pour · cubic-bezier(.22,1,.36,1)', 'cubic-bezier(.22,1,.36,1)', 'Default: entrances, hovers'], ['swirl · cubic-bezier(.65,0,.35,1)', 'cubic-bezier(.65,0,.35,1)', 'Page and panel transitions'], ['pop · cubic-bezier(.34,1.56,.64,1)', 'cubic-bezier(.34,1.56,.64,1)', 'Cart badges, toggles'], ['linear', 'linear', 'Marquees and spinners only']];
+    const press = ['press-1.jpg', 'press-2.jpg', 'press-3.jpg', 'press-4.jpg', 'press-5.jpg', 'press-6.png', 'press-7.png'];
+    const faqs = [
+      ['Are Delta-9 products legal?', 'Yes. Hemp-derived Delta-9 with no more than 0.3% THC by dry weight is federally legal under the 2018 Farm Bill.'],
+      ['How much should I take?', 'Start with 5–10mg. You should feel something in 15–20 minutes. Wait a day before increasing.'],
+      ['Will I test positive for THC?', 'The short answer is yes.']];
+    const chipList = ['All', 'Mocktail Creator', 'Wine', 'With THC', 'Alcohol-free'];
+    return {
+      toc: [['brand', '01', 'Brand'], ['color', '02', 'Color'], ['gradients', '03', 'Gradients'], ['abstracts', '04', 'Backgrounds'], ['patterns', '05', 'Patterns'], ['type', '06', 'Typography'], ['foundations', '07', 'Space & depth'], ['effects', '08', 'Effects'], ['motion', '09', 'Motion'], ['components', '10', 'Components']].map(([id, n, label]) => ({ id, n, label })),
+      values: [{ t: 'Good vibes only', d: 'Upbeat, social, celebratory. We sell the moment, not the molecule.' }, { t: 'Radically clear', d: 'Dosing, legality and lab results are stated plainly. Trust is the product.' }, { t: 'Crafted, not clinical', d: 'Warm copper and paper textures. Premium like wine, never pharmaceutical.' }, { t: 'You\u2019re the mixologist', d: 'We hand people the tools: recipes, doses, choices. Their drink, their way.' }],
+      scales: [
+        scale('Copper', 'Primary accent · from crest rings', [['50', '#FBF3EA'], ['100', '#F4E2CC'], ['200', '#E8C7A1'], ['300', '#DCAB78'], ['400', '#D09C66'], ['500', '#C8935A'], ['600', '#A8703A', 1], ['700', '#84552B', 1], ['800', '#5E3C1F', 1]]),
+        scale('Hemp Olive', 'Brand green · from wordmark & laurel', [['50', '#F3F5EA'], ['100', '#E2E8CC'], ['200', '#CDD7B1'], ['300', '#AEBD7F'], ['400', '#8E9E4F'], ['500', '#6F7D2B', 1], ['600', '#586422', 1], ['700', '#3A4218', 1], ['800', '#262B17', 1], ['900', '#1A1E0F', 1]]),
+        scale('Cream Neutrals', 'Canvas, lines & text', [['white', '#FFFDF8'], ['cream', '#FAF6EE'], ['paper', '#F3ECDD'], ['line', '#E6DDC9'], ['stone', '#C9BFA8'], ['muted', '#8B8775', 1], ['soft', '#6B6754', 1], ['body', '#4A473D', 1], ['ink', '#23261A', 1]])],
+      semantic: [{ name: 'Success', hex: '#6F7D2B', use: 'confirmations, passed COA' }, { name: 'Warning', hex: '#D9A23A', use: 'low stock, dose caution' }, { name: 'Error', hex: '#B5452E', use: 'errors, restrictions' }, { name: 'Info', hex: '#5C7A7A', use: 'tips, notes' }],
+      gradients: [
+        { name: 'Golden Hour', css: 'linear-gradient(135deg,#F4E2CC 0%,#DCAB78 50%,#A8703A 100%)', fg: '#23261A', code: 'linear-gradient(135deg, #F4E2CC, #DCAB78, #A8703A)' },
+        { name: 'Hemp Field', css: 'linear-gradient(160deg,#AEBD7F 0%,#6F7D2B 55%,#3A4218 100%)', fg: '#FAF6EE', code: 'linear-gradient(160deg, #AEBD7F, #6F7D2B, #3A4218)' },
+        { name: 'Sage Mist', css: 'linear-gradient(180deg,#E2E8CC 0%,#FAF6EE 100%)', fg: '#23261A', code: 'linear-gradient(180deg, #E2E8CC, #FAF6EE)' },
+        { name: 'Copper Dusk', css: 'linear-gradient(135deg,#262B17 0%,#3A4218 45%,#A8703A 100%)', fg: '#FAF6EE', code: 'linear-gradient(135deg, #262B17, #3A4218, #A8703A)' },
+        { name: 'Rosé Pour', css: 'linear-gradient(135deg,#FAF6EE 0%,#F4D3C4 50%,#E8A994 100%)', fg: '#23261A', code: 'linear-gradient(135deg, #FAF6EE, #F4D3C4, #E8A994)' },
+        { name: 'Chardonnay', css: 'linear-gradient(135deg,#FBF3EA 0%,#EFD9A0 55%,#D9B45E 100%)', fg: '#23261A', code: 'linear-gradient(135deg, #FBF3EA, #EFD9A0, #D9B45E)' },
+        { name: 'Mocktail Mesh', css: 'radial-gradient(60% 80% at 15% 20%,#CDD7B1 0%,transparent 60%),radial-gradient(60% 80% at 85% 30%,#E8C7A1 0%,transparent 60%),radial-gradient(70% 70% at 50% 100%,#C8935A 0%,transparent 65%),#FAF6EE', fg: '#23261A', code: 'radial ×3: sage 15/20 · copper-200 85/30 · copper 50/100 on cream' },
+        { name: 'Night Pour', css: 'radial-gradient(80% 100% at 50% 0%,#3A4218 0%,#23261A 70%)', fg: '#C8935A', code: 'radial-gradient(80% 100% at 50% 0%, #3A4218, #23261A 70%)' }],
+      patterns: [
+        { name: 'Crest Dots', use: 'from the dotted ring', bg: '#FAF6EE', img: 'radial-gradient(#C8935A 2px,transparent 2.5px)', size: '18px 18px' },
+        { name: 'Offset Dots', use: 'cards, inserts', bg: '#262B17', img: 'radial-gradient(#CDD7B1 1.6px,transparent 2px),radial-gradient(#CDD7B1 1.6px,transparent 2px)', size: '24px 24px' },
+        { name: 'Label Stripes', use: 'promo bands', bg: '#C8935A', img: 'repeating-linear-gradient(135deg,rgba(35,38,26,.16) 0 10px,transparent 10px 22px)', size: 'auto' },
+        { name: 'Double Frame Grid', use: 'COA, lab pages', bg: '#FFFDF8', img: 'linear-gradient(#E6DDC9 1px,transparent 1px),linear-gradient(90deg,#E6DDC9 1px,transparent 1px)', size: '28px 28px' },
+        { name: 'Crest Rings', use: 'hero corners', bg: '#E2E8CC', img: 'repeating-radial-gradient(circle at 0 0,transparent 0 14px,rgba(111,125,43,.35) 14px 16px)', size: 'auto' },
+        { name: 'Checker Pour', use: 'party, social', bg: '#FAF6EE', img: 'conic-gradient(#CDD7B1 25%,transparent 0 50%,#CDD7B1 0 75%,transparent 0)', size: '40px 40px' },
+        { name: 'Chevron', use: 'dividers', bg: '#23261A', img: 'linear-gradient(135deg,#3A4218 25%,transparent 25%),linear-gradient(225deg,#3A4218 25%,transparent 25%)', size: '36px 36px' },
+        { name: 'Arches', use: 'wine, recipes', bg: '#F3ECDD', img: 'radial-gradient(circle at 50% 100%,#E8C7A1 0 14px,#FAF6EE 14px 18px,#E8C7A1 18px 22px,transparent 22px)', size: '44px 26px' }],
+      typeScale: [
+        { token: '--display-xl', spec: 'Bebas 168 / 0.84', family: "'Bebas Neue',sans-serif", size: '120px', weight: 400, lh: '.84', ls: '0', tt: 'none', color: '#23261A', sample: 'Sip smarter.' },
+        { token: '--display-l', spec: 'Bebas 112 / 0.85', family: "'Bebas Neue',sans-serif", size: '96px', weight: 400, lh: '.85', ls: '0', tt: 'none', color: '#23261A', sample: 'Feel better.' },
+        { token: '--h1', spec: 'Bebas 72 / 0.9', family: "'Bebas Neue',sans-serif", size: '72px', weight: 400, lh: '.9', ls: '0', tt: 'none', color: '#23261A', sample: 'Make any drink a cannabis beverage' },
+        { token: '--h2', spec: 'Bebas 52 / 0.92', family: "'Bebas Neue',sans-serif", size: '52px', weight: 400, lh: '.92', ls: '.005em', tt: 'none', color: '#23261A', sample: 'Did we mention it\u2019s completely legal?' },
+        { token: '--h3', spec: 'Bebas 36 / 1', family: "'Bebas Neue',sans-serif", size: '36px', weight: 400, lh: '1', ls: '.01em', tt: 'none', color: '#23261A', sample: 'Discover your perfect dose' },
+        { token: '--title', spec: 'Manrope 800 · 20 / 1.3', family: "'Manrope',sans-serif", size: '20px', weight: 800, lh: '1.3', ls: '0', tt: 'none', color: '#23261A', sample: 'Cannabis Mocktail Creator · 100mg' },
+        { token: '--eyebrow', spec: 'Manrope 800 · 12 · +.16em', family: "'Manrope',sans-serif", size: '12px', weight: 800, lh: '1.4', ls: '.16em', tt: 'uppercase', color: '#A8703A', sample: 'Always start small' },
+        { token: '--body-l', spec: 'Manrope 400 · 19 / 1.55', family: "'Manrope',sans-serif", size: '19px', weight: 400, lh: '1.55', ls: '0', tt: 'none', color: '#4A473D', sample: 'Upgrade your unwind without the hangovers.' },
+        { token: '--body', spec: 'Manrope 400 · 16 / 1.6', family: "'Manrope',sans-serif", size: '16px', weight: 400, lh: '1.6', ls: '0', tt: 'none', color: '#4A473D', sample: 'Our hemp-derived Delta-9 products are fully compliant with the 2018 Farm Bill.' },
+        { token: '--caption', spec: 'Manrope 500 · 13 / 1.5', family: "'Manrope',sans-serif", size: '13px', weight: 500, lh: '1.5', ls: '0', tt: 'none', color: '#6B6754', sample: 'Not sold in Alaska & Idaho · 21+ only' },
+        { token: '--mono', spec: 'JetBrains Mono 12', family: "'JetBrains Mono',monospace", size: '13px', weight: 400, lh: '1.5', ls: '0', tt: 'none', color: '#6B6754', sample: 'BATCH 240701 · Δ9 THC 0.28% · PASSED' }],
+      spacing: [['--space-1', 4], ['--space-2', 8], ['--space-3', 12], ['--space-4', 16], ['--space-5', 20], ['--space-6', 24], ['--space-8', 32], ['--space-10', 40], ['--space-12', 48], ['--space-16', 64], ['--space-22', 88], ['--space-30', 120]].map(([k, v]) => ({ k, px: v + 'px' })),
+      radii: [['xs', '6px'], ['sm', '11px'], ['md', '16px'], ['lg', '22px'], ['xl', '28px'], ['pill', '999px']].map(([k, v]) => ({ k, v })),
+      shadows: [['sm', '0 1px 2px rgba(35,38,26,.08),0 0 0 1px #E6DDC9'], ['md', '0 12px 30px -16px rgba(35,38,26,.35)'], ['lg', '0 30px 60px -20px rgba(35,38,26,.28)'], ['glow', '0 24px 48px -16px rgba(200,147,90,.6)']].map(([k, v]) => ({ k, v })),
+      durations: [{ k: '--dur-fast', v: '150ms', use: 'Color, opacity on hover' }, { k: '--dur-base', v: '250ms', use: 'Buttons, toggles, menus' }, { k: '--dur-slow', v: '450ms', use: 'Card lift, drawers' }, { k: '--dur-reveal', v: '800ms', use: 'Scroll reveals, hero intro' }],
+      meshLive: h('div', { style: { position: 'absolute', inset: 0 } },
+        h('div', { style: { position: 'absolute', width: '70%', height: '90%', left: '-10%', top: '-20%', borderRadius: '50%', background: 'radial-gradient(closest-side,#C8935A,rgba(200,147,90,0))', animation: 'hbc-drift 14s ease-in-out infinite' } }),
+        h('div', { style: { position: 'absolute', width: '70%', height: '90%', right: '-15%', bottom: '-30%', borderRadius: '50%', background: 'radial-gradient(closest-side,#8E9E4F,rgba(142,158,79,0))', animation: 'hbc-drift 18s ease-in-out infinite reverse' } }),
+        h('div', { style: { position: 'absolute', width: '40%', height: '50%', left: '40%', top: '20%', borderRadius: '50%', background: 'radial-gradient(closest-side,#CDD7B1,rgba(205,215,177,0))', animation: 'hbc-drift 11s ease-in-out infinite', animationDelay: '-4s' } }),
+        h('div', { style: { position: 'absolute', left: 24, bottom: 18, fontFamily: "'Bebas Neue',sans-serif", fontSize: 44, color: '#FAF6EE' } }, 'Golden Mesh')),
+      foilText: h('div', { style: { fontFamily: "'Bebas Neue',sans-serif", fontSize: 120, lineHeight: .85, textAlign: 'center', background: 'linear-gradient(100deg,#84552B 0%,#C8935A 20%,#F4E2CC 32%,#C8935A 44%,#84552B 60%,#C8935A 80%,#F4E2CC 92%,#84552B 100%)', backgroundSize: '200% 100%', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', animation: 'hbc-foil 5s linear infinite' } }, 'Join the', h('br'), 'revolution'),
+      pulseDot: h('div', { style: { display: 'flex', alignItems: 'center', gap: 10, background: '#23261A', color: '#FAF6EE', borderRadius: 999, padding: '10px 16px', fontWeight: 800, fontSize: 13 } }, h('span', { style: { width: 10, height: 10, borderRadius: '50%', background: '#C8935A', animation: 'hbc-pulse 1.6s cubic-bezier(.22,1,.36,1) infinite' } }), 'NEW DROP'),
+      easeDemos: h('div', { style: { display: 'flex', flexDirection: 'column', gap: 14 } }, ease.map(([label, fn, use], i) => h('div', { key: i, style: { display: 'grid', gridTemplateColumns: 'minmax(160px,280px) minmax(0,1fr)', gap: 20, alignItems: 'center' } },
+        h('div', { style: { display: 'flex', flexDirection: 'column', gap: 2 } }, h('span', { style: { fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: '#23261A' } }, label), h('span', { style: { fontSize: 13, color: '#6B6754' } }, use)),
+        h('div', { style: { position: 'relative', height: 36, background: '#F3ECDD', borderRadius: 999, overflow: 'hidden', '--d': 'calc(100cqw - 36px)', containerType: 'inline-size' } },
+          h('div', { style: { position: 'absolute', top: 4, left: 4, width: 28, height: 28, borderRadius: '50%', background: i === 3 ? '#6F7D2B' : '#C8935A', animation: 'hbc-ease 2.8s ' + fn + ' infinite', '--d': 'calc(100cqw - 36px)' } }))))),
+      pourDemo: h('div', { style: { position: 'relative', width: 120, height: 190, border: '3px solid #23261A', borderTop: 'none', borderRadius: '0 0 28px 28px', overflow: 'hidden', background: '#FFFDF8' } },
+        h('div', { style: { position: 'absolute', left: 0, right: 0, bottom: 0, background: 'linear-gradient(180deg,#DCAB78,#C8935A)', animation: 'hbc-pour 4s cubic-bezier(.22,1,.36,1) infinite' } }),
+        h('div', { style: { position: 'absolute', left: 0, right: 0, top: 40, textAlign: 'center', fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, color: '#23261A' } }, '5MG')),
+      spinBadge: h('div', { style: { position: 'relative', width: 200, height: 200 } },
+        h('svg', { viewBox: '0 0 200 200', width: 200, height: 200, style: { animation: 'hbc-spin 24s linear infinite', position: 'absolute', inset: 0 } },
+          h('defs', null, h('path', { id: 'hbcCircle', d: 'M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0' })),
+          h('text', { fill: '#C8935A', style: { fontFamily: "'Bebas Neue',sans-serif", fontSize: 26, letterSpacing: 6 } }, h('textPath', { href: '#hbcCircle' }, 'JOIN THE REVOLUTION · NO HANGOVER · '))),
+        h('div', { style: { position: 'absolute', inset: 50, borderRadius: '50%', background: '#C8935A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Bebas Neue',sans-serif", fontSize: 34, color: '#23261A', lineHeight: .9, textAlign: 'center' } }, '15', h('br'), 'MIN')),
+      fadeDemo: h('div', { key: S.replay, style: { display: 'flex', gap: 10 } }, ['Sip', 'Smarter', 'Feel', 'Better'].map((w, i) => h('span', { key: i, style: { fontFamily: "'Bebas Neue',sans-serif", fontSize: 44, color: i % 2 ? '#C8935A' : '#23261A', animation: 'hbc-fadeup .8s cubic-bezier(.22,1,.36,1) both', animationDelay: (i * 80) + 'ms' } }, w))),
+      replay: () => this.setState(s => ({ replay: s.replay + 1 })),
+      bubbles: h('div', { style: { position: 'absolute', inset: 0 } }, Array.from({ length: 14 }, (_, i) => h('span', { key: i, style: { position: 'absolute', bottom: -20, left: (5 + (i * 37) % 90) + '%', width: 8 + (i * 7) % 16, height: 8 + (i * 7) % 16, borderRadius: '50%', border: '2px solid rgba(250,246,238,.8)', background: 'rgba(250,246,238,.18)', animation: `hbc-bubble ${3 + (i % 4)}s ease-in infinite`, animationDelay: `-${(i * 0.53) % 4}s` } })), h('div', { style: { position: 'absolute', left: 24, top: 20, fontFamily: "'Bebas Neue',sans-serif", fontSize: 40, color: '#23261A' } }, 'Fizz')),
+      floatDemo: h('img', { src: 'assets/product-mocktail-100mg.png', alt: '', style: { height: 220, animation: 'hbc-float 6s ease-in-out infinite', filter: 'drop-shadow(0 24px 24px rgba(35,38,26,.25))' } }),
+      marquee: h('div', { style: { overflow: 'hidden', maskImage: 'linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)', WebkitMaskImage: 'linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)' } },
+        h('div', { style: { display: 'flex', gap: 56, width: 'max-content', animation: 'hbc-marquee 40s linear infinite', alignItems: 'center' } }, [...press, ...press].map((p, i) => h('img', { key: i, src: 'assets/' + p, alt: '', style: { height: 64, borderRadius: 8, filter: 'grayscale(1)', opacity: .85 } })))),
+      qty: S.qty,
+      qtyUp: () => this.setState(s => ({ qty: s.qty + 1 })),
+      qtyDown: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      toggleSwitch: () => this.setState(s => ({ sw: !s.sw })),
+      switchBg: S.sw ? '#6F7D2B' : '#C9BFA8', switchLeft: S.sw ? '25px' : '3px',
+      chips: chipList.map(c => { const on = !!S.chips[c]; return { label: c, bg: on ? '#23261A' : 'transparent', fg: on ? '#FAF6EE' : '#23261A', toggle: () => this.setState(s => ({ chips: { ...s.chips, [c]: !s.chips[c] } })) }; }),
+      doses: [{ l: 'Curious', v: '2–5MG' }, { l: 'Social', v: '5–10MG' }, { l: 'Experienced', v: '10–20MG' }],
+      faqs: faqs.map(([q, a], i) => { const open = S.faq === i; return { q, a, open, rot: open ? 'rotate(45deg)' : 'none', iconBg: open ? '#23261A' : '#F3ECDD', iconFg: open ? '#FAF6EE' : '#23261A', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

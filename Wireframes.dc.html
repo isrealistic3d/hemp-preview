@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>body{margin:0;background:#EFE9DC;-webkit-font-smoothing:antialiased}a{color:#84552B;text-decoration:none}a:hover{color:#23261A}</style>
+</helmet>
+
+<section id="t1" style="padding:64px 64px 96px;font-family:'Kalam',cursive;color:#23261A">
+<div style="display:flex;align-items:baseline;gap:14px;margin-bottom:12px"><a href="#t1" style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#23261A;color:#FAF6EE;padding:4px 9px;border-radius:5px">1</a><span style="font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:.9">Wireframes · key pages</span></div>
+<div style="font-size:19px;color:#4A473D;max-width:1000px;margin-bottom:40px;line-height:1.4">Low-fi page structures based on the <a href="Sitemap.dc.html">sitemap</a>. Boxes with an ✕ are images, grey bars are text, and copper marks the main action. Copper notes explain why each block is there.</div>
+<div style="display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start">
+
+<sc-for list="{{ pages }}" as="pg" hint-placeholder-count="6">
+<div id="{{ pg.id }}" style="flex:none;display:flex;flex-direction:column;gap:10px;width:{{ pg.w }}">
+<div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><a href="#{{ pg.id }}" style="font-family:'JetBrains Mono',monospace;font-size:12px;background:#23261A;color:#FAF6EE;padding:3px 8px;border-radius:5px">{{ pg.id }}</a><span style="font-weight:700;font-size:21px">{{ pg.name }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#6B6754">{{ pg.path }}</span></div>
+<div style="background:#FFFDF8;border:2px solid #23261A;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:12px;box-shadow:5px 6px 0 rgba(35,38,26,.12)">
+<sc-for list="{{ pg.blocks }}" as="b" hint-placeholder-count="6">
+<div style="display:flex;flex-direction:column;gap:5px">
+
+<sc-if value="{{ b.isNav }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:8px;border:2px solid #23261A;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;padding:7px 10px">
+<span style="width:34px;height:20px;border:1.5px solid #23261A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">HBC</span>
+<sc-for list="{{ b.links }}" as="l" hint-placeholder-count="4"><span style="font-size:12px">{{ l }}</span></sc-for>
+<span style="flex:1"></span><span style="width:60px;height:16px;border:1.5px solid #23261A;border-radius:999px"></span><span style="background:#C8935A;border:1.5px solid #23261A;border-radius:999px;padding:0 8px;font-size:11px;font-weight:700">cart</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isHero }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;height:{{ b.h }};border:2px solid #23261A;border-radius:12px;overflow:hidden;background:#F3ECDD;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;gap:6px">
+<div style="position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(35,38,26,.2) 50%,transparent calc(50% + 1px)),linear-gradient(to top left,transparent calc(50% - 1px),rgba(35,38,26,.2) 50%,transparent calc(50% + 1px))"></div>
+<div style="position:relative;font-family:'Bebas Neue',sans-serif;font-size:34px;line-height:.9;max-width:80%">{{ b.title }}</div>
+<div style="position:relative;width:55%;height:6px;border-radius:4px;background:#C9BFA8"></div>
+<div style="position:relative;display:flex;gap:6px;margin-top:4px"><span style="background:#C8935A;border:1.5px solid #23261A;border-radius:999px;padding:1px 12px;font-size:12px;font-weight:700">{{ b.cta }}</span><span style="border:1.5px solid #23261A;border-radius:999px;padding:1px 12px;font-size:12px;background:#FFFDF8">secondary</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isScroll }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;height:{{ b.h }};border:2px solid #23261A;border-radius:12px;overflow:hidden;background:#3A3D2E;color:#FAF6EE">
+<div style="position:absolute;left:0;right:0;top:36%;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:{{ b.fs }};line-height:1;color:transparent;-webkit-text-stroke:1.5px #C8935A;white-space:nowrap">NO HANGOVER</div>
+<div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:14px">
+<span style="width:40px;height:58px;border:1.5px dashed #CDD7B1;border-radius:8px;opacity:.6;transform:rotate(14deg) translateY(12px)"></span>
+<span style="width:72px;height:104px;border:2px solid #FAF6EE;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px">product</span>
+<span style="width:40px;height:58px;border:1.5px dashed #CDD7B1;border-radius:8px;opacity:.6;transform:rotate(-14deg) translateY(12px)"></span>
+</div>
+<div style="position:absolute;left:12px;top:10px;font-size:12px;line-height:1.2;width:34%">eyebrow<br><b>tagline per product</b></div>
+<div style="position:absolute;right:10px;top:34%;display:flex;flex-direction:column;gap:5px"><span style="width:5px;height:16px;border-radius:9px;background:#C8935A"></span><span style="width:5px;height:5px;border-radius:9px;background:#FAF6EE"></span><span style="width:5px;height:5px;border-radius:9px;background:#FAF6EE"></span><span style="width:5px;height:5px;border-radius:9px;background:#FAF6EE"></span></div>
+<div style="position:absolute;left:12px;right:26px;bottom:10px;display:flex;justify-content:space-between;align-items:flex-end;font-size:12px"><span>01/05 · name · $price</span><span style="background:#C8935A;color:#23261A;border-radius:999px;padding:0 10px;font-weight:700">add to cart</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isText }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;align-items:{{ b.align }};gap:5px;padding:4px">
+<span style="font-size:10px;letter-spacing:.14em;font-weight:700;color:#84552B">{{ b.eyebrow }}</span>
+<span style="font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:.95;text-align:{{ b.align }}">{{ b.title }}</span>
+<span style="width:70%;height:5px;border-radius:4px;background:#D9D0BC"></span><span style="width:50%;height:5px;border-radius:4px;background:#D9D0BC"></span>
+<sc-if value="{{ b.cta }}" hint-placeholder-val="{{ false }}"><span style="margin-top:4px;background:#C8935A;border:1.5px solid #23261A;border-radius:999px;padding:1px 12px;font-size:12px;font-weight:700">{{ b.cta }}</span></sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isChips }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-wrap:wrap;gap:5px;align-items:center"><sc-for list="{{ b.items }}" as="c" hint-placeholder-count="5"><span style="border:1.5px solid #23261A;border-radius:999px;padding:0 9px;font-size:11px;background:{{ c.bg }}">{{ c.t }}</span></sc-for></div>
+</sc-if>
+
+<sc-if value="{{ b.isCards }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:0 2px"><span style="font-family:'Bebas Neue',sans-serif;font-size:22px">{{ b.title }}</span><span style="font-size:12px;text-decoration:underline">{{ b.more }}</span></div>
+<div style="display:grid;grid-template-columns:repeat({{ b.cols }},minmax(0,1fr));gap:7px">
+<sc-for list="{{ b.items }}" as="c" hint-placeholder-count="4">
+<div style="border:1.5px solid #23261A;border-radius:10px;padding:5px;display:flex;flex-direction:column;gap:4px">
+<div style="position:relative;aspect-ratio:{{ b.ratio }};border:1.5px solid #23261A;border-radius:7px;background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(35,38,26,.2) 50%,transparent calc(50% + 1px)),linear-gradient(to top left,transparent calc(50% - 1px),rgba(35,38,26,.2) 50%,transparent calc(50% + 1px)),#F3ECDD">
+<sc-if value="{{ b.icons }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;right:3px;top:3px;display:flex;flex-direction:column;gap:2px"><span style="width:9px;height:9px;border:1.2px solid #23261A;border-radius:50%;background:#FFFDF8"></span><span style="width:9px;height:9px;border:1.2px solid #23261A;border-radius:50%;background:#FFFDF8"></span><span style="width:9px;height:9px;border:1.2px solid #23261A;border-radius:50%;background:#FFFDF8"></span></div><span style="position:absolute;left:3px;top:3px;background:#CDD7B1;border:1px solid #23261A;border-radius:999px;font-size:8px;padding:0 4px">badge</span></sc-if>
+</div>
+<span style="font-size:11px;line-height:1.1;font-weight:700">{{ c }}</span>
+<sc-if value="{{ b.buy }}" hint-placeholder-val="{{ false }}"><div style="display:flex;justify-content:space-between;align-items:center"><span style="width:24px;height:5px;background:#C9BFA8;border-radius:3px"></span><span style="background:#C8935A;border:1.2px solid #23261A;border-radius:999px;padding:0 5px;font-size:9px;font-weight:700">cart · add</span></div></sc-if>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isStrip }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;align-items:center;gap:6px;border-top:1.5px dashed #23261A;border-bottom:1.5px dashed #23261A;padding:7px 0"><span style="font-size:11px;font-weight:700;white-space:nowrap">{{ b.title }}</span><sc-for list="{{ b.items }}" as="c" hint-placeholder-count="6"><span style="flex:1;min-width:18px;height:16px;border:1.5px solid #8B8775;border-radius:4px"></span></sc-for></div>
+</sc-if>
+
+<sc-if value="{{ b.isSteps }}" hint-placeholder-val="{{ false }}">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:22px;padding:0 2px">{{ b.title }}</div>
+<div style="display:grid;grid-template-columns:repeat({{ b.cols }},minmax(0,1fr));gap:7px">
+<sc-for list="{{ b.items }}" as="c" hint-placeholder-count="3"><div style="border:1.5px solid #23261A;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;padding:8px;display:flex;flex-direction:column;gap:4px;background:#F3ECDD"><span style="width:18px;height:18px;border-radius:50%;border:1.5px solid #23261A;background:#CDD7B1"></span><span style="font-size:12px;font-weight:700;line-height:1.1">{{ c }}</span><span style="width:80%;height:4px;border-radius:3px;background:#D9D0BC"></span></div></sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isSplit }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;background:{{ b.bg }};border:1.5px solid #23261A;border-radius:12px;padding:10px;color:{{ b.fg }}">
+<div style="order:{{ b.imgOrder }};aspect-ratio:4/3;border:1.5px solid currentColor;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(128,128,128,.35) 50%,transparent calc(50% + 1px)),linear-gradient(to top left,transparent calc(50% - 1px),rgba(128,128,128,.35) 50%,transparent calc(50% + 1px))">{{ b.img }}</div>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:10px;letter-spacing:.14em;font-weight:700;color:#C8935A">{{ b.eyebrow }}</span><span style="font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:.95">{{ b.title }}</span><span style="width:90%;height:4px;border-radius:3px;background:#C9BFA8"></span><span style="width:70%;height:4px;border-radius:3px;background:#C9BFA8"></span><span style="align-self:flex-start;margin-top:3px;background:#C8935A;color:#23261A;border:1.5px solid #23261A;border-radius:999px;padding:0 10px;font-size:11px;font-weight:700">{{ b.cta }}</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isList }}" hint-placeholder-val="{{ false }}">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:22px;padding:0 2px">{{ b.title }}</div>
+<div style="display:flex;flex-direction:column;gap:5px"><sc-for list="{{ b.items }}" as="c" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;align-items:center;border:1.5px solid #23261A;border-radius:8px;padding:5px 9px;font-size:12px"><span>{{ c }}</span><span style="font-size:11px;border:1.2px solid #23261A;border-radius:999px;padding:0 7px">{{ b.action }}</span></div></sc-for></div>
+</sc-if>
+
+<sc-if value="{{ b.isPdp }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:1.1fr 1fr;gap:10px">
+<div style="display:flex;flex-direction:column;gap:5px"><div style="aspect-ratio:1/1;border:2px solid #23261A;border-radius:10px;background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(35,38,26,.2) 50%,transparent calc(50% + 1px)),linear-gradient(to top left,transparent calc(50% - 1px),rgba(35,38,26,.2) 50%,transparent calc(50% + 1px)),#F3ECDD;display:flex;align-items:flex-end;justify-content:center;padding:5px;font-size:11px">gallery + video</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px"><span style="aspect-ratio:1;border:1.5px solid #23261A;border-radius:5px"></span><span style="aspect-ratio:1;border:1.5px solid #8B8775;border-radius:5px"></span><span style="aspect-ratio:1;border:1.5px solid #8B8775;border-radius:5px"></span><span style="aspect-ratio:1;border:1.5px solid #8B8775;border-radius:5px"></span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px;font-size:11px">
+<span>★★★★★ 101 reviews · lab tested</span>
+<span style="font-family:'Bebas Neue',sans-serif;font-size:24px;line-height:.9">Mocktail Creator 100mg</span>
+<span style="font-family:'Bebas Neue',sans-serif;font-size:20px">$28.95</span>
+<span style="width:90%;height:4px;border-radius:3px;background:#D9D0BC"></span><span style="width:70%;height:4px;border-radius:3px;background:#D9D0BC"></span>
+<span style="font-weight:700">Strength</span><div style="display:flex;gap:4px"><span style="border:1.5px solid #23261A;border-radius:999px;padding:0 6px">50mg</span><span style="border:1.5px solid #23261A;border-radius:999px;padding:0 6px;background:#23261A;color:#FAF6EE">100mg</span><span style="border:1.5px solid #23261A;border-radius:999px;padding:0 6px">pump</span></div>
+<div style="display:flex;gap:4px;align-items:center"><span style="border:1.5px solid #23261A;border-radius:6px;padding:0 5px">one-time</span><span style="border:1.5px solid #23261A;border-radius:6px;padding:0 5px;background:#E2E8CC">subscribe −15%</span></div>
+<div style="display:flex;gap:4px"><span style="border:1.5px solid #23261A;border-radius:999px;padding:0 7px">− 1 +</span><span style="flex:1;text-align:center;background:#C8935A;border:1.5px solid #23261A;border-radius:999px;font-weight:700">cart · add to cart</span></div>
+<span>♡ wishlist · ⇄ compare · free ship $50+</span>
+<span style="border-top:1px dashed #8B8775;padding-top:4px">▸ details ▸ how to dose ▸ ingredients ▸ shipping</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isForm }}" hint-placeholder-val="{{ false }}">
+<div style="border:1.5px solid #23261A;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px;background:#F3ECDD">
+<span style="font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:.95">{{ b.title }}</span>
+<sc-for list="{{ b.items }}" as="c" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:11px;font-weight:700">{{ c }}</span><div style="height:12px;border:1.5px solid #23261A;border-radius:999px;background:#FFFDF8;position:relative"><span style="position:absolute;left:35%;top:-4px;width:16px;height:16px;border-radius:50%;background:#C8935A;border:1.5px solid #23261A"></span></div></div></sc-for>
+<div style="display:flex;justify-content:space-between;align-items:center;border-top:1.5px dashed #23261A;padding-top:6px"><span style="font-size:12px">result → <b>start with 5mg</b></span><span style="background:#C8935A;border:1.5px solid #23261A;border-radius:999px;padding:0 10px;font-size:11px;font-weight:700">{{ b.cta }}</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isFaq }}" hint-placeholder-val="{{ false }}">
+<div style="font-family:'Bebas Neue',sans-serif;font-size:22px;padding:0 2px">{{ b.title }}</div>
+<div style="display:flex;flex-direction:column"><sc-for list="{{ b.items }}" as="c" hint-placeholder-count="3"><div style="display:flex;justify-content:space-between;border-bottom:1.5px solid #23261A;padding:5px 2px;font-size:12px"><span>{{ c }}</span><span>+</span></div></sc-for></div>
+</sc-if>
+
+<sc-if value="{{ b.isFooter }}" hint-placeholder-val="{{ false }}">
+<div style="background:#3A3D2E;color:#FAF6EE;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-size:12px">join the revolution · newsletter</span><span style="width:40%;height:14px;border-radius:999px;background:#FAF6EE"></span></div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px"><span style="height:28px;border:1px dashed #CDD7B1;border-radius:4px"></span><span style="height:28px;border:1px dashed #CDD7B1;border-radius:4px"></span><span style="height:28px;border:1px dashed #CDD7B1;border-radius:4px"></span><span style="height:28px;border:1px dashed #CDD7B1;border-radius:4px"></span><span style="height:28px;border:1px dashed #CDD7B1;border-radius:4px"></span></div>
+<div style="font-family:'Bebas Neue',sans-serif;font-size:{{ b.fs }};line-height:.85;white-space:nowrap;overflow:hidden">CRAFTED FOR GOOD VIBES <span style="color:#C8935A">ONLY.</span></div>
+<span style="font-size:10px;opacity:.75">21+ · legal disclaimer · policies</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.isOverlay }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;height:{{ b.h }};border:2px solid #23261A;border-radius:12px;overflow:hidden;background:#D9D0BC">
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;gap:6px;padding:10px;opacity:.35"><span style="height:18px;border:1.5px solid #23261A;border-radius:999px"></span><span style="flex:1;border:1.5px solid #23261A;border-radius:8px"></span></div>
+<div style="position:absolute;{{ b.pos }};background:#FFFDF8;border:2px solid #23261A;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px;box-shadow:4px 5px 0 rgba(35,38,26,.2)">
+<span style="font-family:'Bebas Neue',sans-serif;font-size:22px;line-height:.95">{{ b.title }}</span>
+<sc-for list="{{ b.items }}" as="c" hint-placeholder-count="3"><div style="display:flex;gap:6px;align-items:center;font-size:11px"><span style="width:22px;height:22px;border:1.5px solid #23261A;border-radius:5px;flex-shrink:0"></span><span style="flex:1">{{ c }}</span></div></sc-for>
+<span style="text-align:center;background:#C8935A;border:1.5px solid #23261A;border-radius:999px;font-size:12px;font-weight:700">{{ b.cta }}</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ b.note }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;line-height:1.2;color:#A8703A;padding-left:4px">↳ {{ b.note }}</span></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+
+</div>
+<p style="margin:36px 0 0;font-size:16px;color:#6B6754">Try next: "go hi-fi on <a href="#1a">1a</a> using Hero Scroll and Card 3" · "explore 3 layouts for <a href="#1c">1c</a> product page" · "make mobile versions of <a href="#1b">1b</a> and <a href="#1e">1e</a>"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const B = (type, o = {}) => {
+      const t = { isNav: 0, isHero: 0, isScroll: 0, isText: 0, isChips: 0, isCards: 0, isStrip: 0, isSteps: 0, isSplit: 0, isList: 0, isPdp: 0, isForm: 0, isFaq: 0, isFooter: 0, isOverlay: 0 };
+      t['is' + type] = true;
+      return { note: '', align: 'flex-start', cta: '', more: 'view all', cols: 4, ratio: '1/1.1', icons: false, buy: false, bg: '#FFFDF8', fg: '#23261A', imgOrder: 0, h: '260px', fs: '44px', pos: 'right:8px;top:8px;bottom:8px;width:55%', items: [], ...t, ...o };
+    };
+    const nav = B('Nav', { links: ['Shop ▾', 'Learn ▾', 'Recipes', 'Lab Tests', 'Reviews'] });
+    const navM = B('Nav', { links: ['☰'] });
+    const foot = B('Footer');
+    const chips = arr => B('Chips', { items: arr.map((t, i) => ({ t, bg: i === 0 ? '#CDD7B1' : '#FFFDF8' })) });
+    const pages = [
+      { id: '1a', name: 'Home', path: '/', w: '520px', blocks: [
+        nav,
+        B('Scroll', { h: '300px', note: 'Hero Scroll: 5 products glide in on scroll, and each changes the word, glow and price' }),
+        B('Strip', { title: 'As featured in', items: [1, 2, 3, 4, 5, 6, 7], note: 'Press marquee builds instant trust' }),
+        B('Cards', { title: 'Best sellers', items: ['Mocktail 100mg', 'Mocktail 50mg', 'Rosé · THC', 'MaryRita 4pk'], icons: true, buy: true, note: 'Card 3 style: badge, strength picker, quick view / compare / wishlist' }),
+        B('Steps', { title: 'How it works', cols: 3, items: ['Pick your drink', 'Add your dose', 'Feel it in 15 min'], note: 'Answers "what is this?" in 3 seconds' }),
+        B('Split', { bg: '#3A3D2E', fg: '#FAF6EE', img: 'onset chart', eyebrow: 'ALWAYS START SMALL', title: 'Find your perfect dose', cta: 'Dose finder' }),
+        B('Cards', { title: 'Shop by category', cols: 3, ratio: '4/3', items: ['Mocktail Creator', 'Non-alc wine', 'Wellness'] }),
+        B('Cards', { title: 'Mix it up · recipes', cols: 4, ratio: '1/1', items: ['Mojito', 'Margarita', 'Piña colada', 'Cosmo'], note: 'Recipes drive SEO and "shop the recipe"' }),
+        B('Cards', { title: 'Customers are saying · 4.8★', cols: 3, ratio: '16/9', more: 'all reviews', items: ['"No wine head"', '"Neutral taste"', '"Game changer"'] }),
+        B('Split', { img: 'legal seal', imgOrder: 2, eyebrow: '2018 FARM BILL', title: "Did we mention it's completely legal?", cta: 'View lab tests', note: 'Handles the biggest objection before the footer' }),
+        foot] },
+      { id: '1b', name: 'Collection', path: '/collections/all', w: '520px', blocks: [
+        nav,
+        B('Text', { eyebrow: 'SHOP', title: 'All drinks', note: 'Short intro plus a count of results' }),
+        chips(['All', 'Mocktail Creator', 'Wine', 'With THC', 'No THC', 'Wellness', 'Sort ▾']),
+        B('Cards', { title: '12 products', more: 'grid · list', cols: 3, items: ['Mocktail 100mg', 'Mocktail 50mg', 'Pump 2000mg', 'Rosé · THC', 'Chardonnay · THC', 'MaryRita'], icons: true, buy: true, note: 'Quick view opens a modal, and Add puts the item in the cart drawer without leaving the page' }),
+        B('Split', { bg: '#E2E8CC', img: 'starter kit', eyebrow: 'IN-GRID PROMO', title: 'New to THC? Try the starter kit', cta: 'Shop kit', note: 'Promo tile after row 2' }),
+        B('Cards', { title: '', more: '', cols: 3, items: ['Rosé', 'Chardonnay', 're:LEAF'], icons: true, buy: true }),
+        B('List', { title: 'Compare tray (sticky bottom)', items: ['Mocktail 100mg  vs  Mocktail 50mg'], action: 'compare now', note: 'Shows up once 2+ items are ticked' }),
+        foot] },
+      { id: '1c', name: 'Product page', path: '/products/:handle', w: '560px', blocks: [
+        nav,
+        B('Text', { eyebrow: 'HOME / MOCKTAIL CREATOR / 100MG', title: '' }),
+        B('Pdp', { note: 'Buy box above the fold: strength, subscribe, qty, add to cart. Sticky add-to-cart bar on scroll' }),
+        B('Steps', { title: 'Why people love it', cols: 4, items: ['Fast acting', 'Neutral taste', 'Water soluble', 'Your strength'] }),
+        B('Split', { bg: '#3A3D2E', fg: '#FAF6EE', img: 'onset chart', eyebrow: 'THE SCIENCE', title: 'Nano-emulsified: 400% more bioavailable', cta: 'How it works', note: 'Condensed version of the long science copy' }),
+        B('List', { title: 'Lab results', items: ['Batch 240701 · Δ9 0.28% · passed'], action: 'view COA' }),
+        B('Cards', { title: 'Reviews · 4.8★ (101)', cols: 3, ratio: '16/9', more: 'write a review', items: ['Whitney T.', 'Jill U.', 'Bill S.'] }),
+        B('Cards', { title: 'Make it with', cols: 4, ratio: '1/1', items: ['Mojito', 'Margarita', 'Mai Tai', 'Cosmo'] }),
+        B('Faq', { title: 'FAQ', items: ['Will I test positive?', 'How much should I take?', 'Is it legal in my state?'] }),
+        B('Cards', { title: 'You may also like', items: ['Mocktail 50mg', 'Rosé · THC', 'Pump', 'MaryRita'], icons: true, buy: true }),
+        foot] },
+      { id: '1d', name: 'Perfect Dose', path: '/pages/perfect-dose', w: '480px', blocks: [
+        nav,
+        B('Hero', { h: '200px', title: 'Always start small', cta: 'Find my dose' }),
+        B('Form', { title: 'Dose finder', items: ['Experience with THC', 'Body weight', 'What vibe?'], cta: 'Shop 50mg', note: 'Interactive: 3 sliders give a recommended mg and product' }),
+        B('Steps', { title: 'The 3-step method', cols: 3, items: ['Start 5mg', 'Wait 1 day', 'Adjust ±'] }),
+        B('Split', { img: 'onset chart', eyebrow: 'VS ALCOHOL & EDIBLES', title: 'Kicks in like a cocktail', cta: 'The science' }),
+        B('Faq', { title: 'Dosing questions', items: ['When will I feel it?', 'How long does it last?', 'Can I mix with alcohol?'] }),
+        B('Cards', { title: 'Shop by category', cols: 2, ratio: '4/3', items: ['Mocktail Creator', 'Wine'] }),
+        foot] },
+      { id: '1e', name: 'Recipes', path: '/pages/recipes', w: '480px', blocks: [
+        nav,
+        B('Text', { eyebrow: "YOU'RE THE MIXOLOGIST", title: '16 cannabis mocktails', align: 'center' }),
+        chips(['All', 'Classics', 'Tropical', 'Creamy', 'With wine', '< 5 min']),
+        B('Cards', { title: '', more: '', cols: 3, ratio: '1/1', items: ['Piña colada', 'Whiskey sour', 'Vodka tonic', 'Martini', 'Cosmo', 'Mai tai', 'Long Island', 'Mojito', 'Margarita'], note: 'Each card shows time and difficulty tags' }),
+        B('Split', { bg: '#E2E8CC', img: 'Mocktail Creator', eyebrow: 'EVERY RECIPE NEEDS', title: 'Mocktail Creator Liquid THC', cta: 'Add to cart' }),
+        foot] },
+      { id: '1f', name: 'Recipe detail', path: '/pages/:recipe', w: '480px', blocks: [
+        nav,
+        B('Split', { img: 'drink photo', eyebrow: '5 MIN · EASY · 8 OZ', title: 'Piña Colada Mocktail', cta: 'Jump to recipe' }),
+        B('Steps', { title: 'Ingredients', cols: 4, items: ['4oz pineapple', '2oz coconut', '1 cup ice', '¼ tsp vanilla'] }),
+        B('Text', { eyebrow: 'DIRECTIONS', title: 'Blend, pour, dose, garnish' }),
+        B('List', { title: 'Shop the recipe', items: ['Mocktail Creator 100mg · $28.95'], action: 'add', note: 'One-tap add to cart right where they need it' }),
+        B('Cards', { title: 'More recipes', cols: 3, ratio: '1/1', items: ['Mai tai', 'Mojito', 'Tropical whisper'] }),
+        foot] },
+      { id: '1g', name: 'Lab Tests (COA)', path: '/pages/coa', w: '480px', blocks: [
+        nav,
+        B('Text', { eyebrow: 'RADICAL TRANSPARENCY', title: "What's on the label is what's in the bottle" }),
+        B('Chips', { items: [{ t: 'search batch #…', bg: '#FFFDF8' }] }),
+        B('List', { title: 'Certificates', items: ['Mocktail Creator 100mg (50mL)', 'Mocktail Creator 50mg (50mL)', 'Liquid THC 50mg (30mL)', 'Pump 2000mg (1000mL)', 'Vybz Mood Enhancer', 're:Leaf Muscle Support'], action: 'view COA', note: 'COA opens an inline PDF viewer with a pass/fail summary' }),
+        B('Split', { bg: '#3A3D2E', fg: '#FAF6EE', img: 'farm bill', eyebrow: 'IS IT LEGAL?', title: '≤0.3% Δ9 · federally legal', cta: 'Read more' }),
+        foot] },
+      { id: '1h', name: 'Overlays · cart & age gate', path: 'global', w: '480px', blocks: [
+        B('Overlay', { h: '250px', title: 'Your cart (2)', items: ['Mocktail 100mg  − 1 +  $28.95', 'Rosé · THC  − 1 +  $28.98', 'Add re:LEAF for $28.95?'], cta: 'Checkout · $57.93', note: 'Free-ship meter at the top: "$7 away from free shipping"' }),
+        B('Overlay', { h: '210px', pos: 'left:18%;right:18%;top:28px', title: 'Are you 21 or older?', items: ['crest logo'], cta: "Yes, I'm 21+", note: 'Shown on first visit; remembered for 30 days' })] },
+      { id: '1i', name: 'Home · mobile', path: '/ (390px)', w: '300px', blocks: [
+        navM,
+        B('Scroll', { h: '360px', fs: '30px', note: 'Same scroll story, stacked; products swipe in vertically' }),
+        B('Strip', { title: 'Press', items: [1, 2, 3, 4] }),
+        B('Cards', { title: 'Best sellers', cols: 2, items: ['Mocktail 100mg', 'Rosé · THC'], icons: true, buy: true, note: 'Horizontal swipe carousel' }),
+        B('Steps', { title: 'How it works', cols: 1, items: ['Pick · Dose · Feel it in 15 min'] }),
+        B('Split', { bg: '#3A3D2E', fg: '#FAF6EE', img: 'chart', eyebrow: 'DOSE', title: 'Start small', cta: 'Finder' }),
+        B('Footer', { fs: '22px' })] }
+    ];
+    return { pages };
+  }
+}
+</script>
+</body>
+</html>
