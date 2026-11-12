@@ -1,0 +1,70 @@
+/* Phone layout overrides. The pages are styled inline, so rules match on inline-style fragments
+   (as the browser serializes them) and need !important to win. */
+@media (max-width: 640px) {
+  html { -webkit-text-size-adjust: 100%; }
+  input, select, textarea { font-size: 16px !important; } /* stops iOS zooming on focus */
+
+  /* ---------- Shared header ---------- */
+  header[style*="sticky"] { padding: 8px 10px !important; }
+  header[style*="sticky"] > div { border-radius: 18px !important; }
+  header[style*="sticky"] > div > div[style*="gap: 24px"] { gap: 10px !important; padding: 8px 8px 8px 10px !important; }
+  header[style*="sticky"] img[src*="logo"] { height: 42px !important; }
+  header[style*="sticky"] button[style*="height: 46px"] { height: 42px !important; padding: 0 6px 0 12px !important; gap: 8px !important; font-size: 19px !important; }
+  header[style*="sticky"] button[style*="height: 46px"] > span[style*="min-width: 30px"] { min-width: 28px !important; height: 28px !important; }
+
+  /* ---------- Home: scroll hero ---------- */
+  section[data-screen-label="01 Hero"] > div { height: 100svh !important; padding: 84px 10px 10px !important; }
+  section[data-screen-label="01 Hero"] [style*="height: 180px"] { left: 20px !important; top: 20px !important; width: calc(100% - 64px) !important; height: 170px !important; }
+  section[data-screen-label="01 Hero"] [style*="height: 180px"] [style*="Bebas"] { font-size: 34px !important; }
+  section[data-screen-label="01 Hero"] [style*="height: 180px"] [style*="line-height: 1.55"] { font-size: 14px !important; line-height: 1.45 !important; }
+  section[data-screen-label="01 Hero"] [style*="max-width: 40%"] { display: none !important; }
+  section[data-screen-label="01 Hero"] [style*="aspect-ratio"] { width: min(64vw, 36svh) !important; top: calc(50% + 14px) !important; }
+  section[data-screen-label="01 Hero"] [style*="top: 50%"][style*="gap: 12px"] { right: 6px !important; }
+  section[data-screen-label="01 Hero"] [style*="justify-content: space-between"][style*="flex-wrap: wrap"] { left: 14px !important; right: 14px !important; bottom: 16px !important; gap: 10px !important; }
+  section[data-screen-label="01 Hero"] [style*="min-width: 300px"] { min-width: 0 !important; flex: 1 1 100% !important; height: 78px !important; }
+  section[data-screen-label="01 Hero"] [style*="min-width: 300px"] > div { right: 0 !important; padding: 10px 14px !important; border-radius: 16px !important; }
+  section[data-screen-label="01 Hero"] [style*="min-width: 300px"] span[style*="white-space: nowrap"][style*="line-height: 1"] { font-size: 22px !important; white-space: normal !important; }
+  section[data-screen-label="01 Hero"] [style*="min-width: 300px"] span[style*="font-size: 30px"] { font-size: 24px !important; }
+  section[data-screen-label="01 Hero"] [style*="min-width: 300px"] + div { flex: 1 1 100% !important; gap: 8px !important; }
+  section[data-screen-label="01 Hero"] [style*="min-width: 300px"] + div > button { flex: 1 1 0 !important; justify-content: center !important; height: 50px !important; padding: 0 10px !important; font-size: 18px !important; gap: 7px !important; white-space: nowrap !important; }
+  section[data-screen-label="01 Hero"] [style*="letter-spacing: 0.2em"] { display: none !important; }
+
+  /* ---------- Shared footer: signup form ---------- */
+  [style*="min-width: 260px"] { min-width: 0 !important; flex: 1 1 100% !important; }
+  button[style*="height: 44px"][style*="padding: 0px 22px"] { padding: 0 16px !important; font-size: 18px !important; }
+
+  /* ---------- Forms ---------- */
+  input, select, textarea { min-width: 0 !important; box-sizing: border-box; }
+  [style*="grid-template-columns: 1fr 1fr 1.4fr"],
+  [style*="grid-template-columns: 1.4fr 1fr 1fr"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+  [style*="grid-template-columns: 1fr 1fr 1.4fr"] > :nth-child(3),
+  [style*="grid-template-columns: 1.4fr 1fr 1fr"] > :first-child { grid-column: 1 / -1 !important; }
+
+  /* ---------- Fixed multi-column blocks that get too narrow ---------- */
+  /* trust / stat cards: stack */
+  [style*="repeat(3, minmax(0px, 1fr))"][style*="width: 100%"],
+  [style*="position: relative"][style*="repeat(3, minmax(0px, 1fr))"] { grid-template-columns: minmax(0, 1fr) !important; }
+  [style*="position: relative"][style*="repeat(2, minmax(0px, 1fr))"] > [style*="padding: 22px"] { padding: 14px !important; }
+  /* small icon + label tiles in a 3-up row: icon above label */
+  [style*="repeat(3, minmax(0px, 1fr))"] > [style*="border-radius: 14px"][style*="gap: 10px"] { flex-direction: column !important; text-align: center !important; padding: 10px 6px !important; gap: 6px !important; }
+  /* lab-test rows: thumbnail + text, action underneath */
+  [style*="grid-template-columns: 96px minmax(0px, 1fr) auto"] { grid-template-columns: 64px minmax(0, 1fr) !important; gap: 12px !important; }
+  [style*="grid-template-columns: 96px minmax(0px, 1fr) auto"] > :first-child { width: 64px !important; height: 72px !important; }
+  [style*="grid-template-columns: 96px minmax(0px, 1fr) auto"] > :nth-child(3) { grid-column: 1 / -1 !important; justify-self: start !important; }
+  /* comparison chart rows */
+  [style*="grid-template-columns: 150px minmax(0px, 1fr)"] { grid-template-columns: 92px minmax(0, 1fr) !important; gap: 8px !important; }
+  /* product strip inside a card: let the button drop below */
+  [style*="margin-top: auto"][style*="border-radius: 18px"][style*="align-items: center"] { flex-wrap: wrap !important; }
+  [style*="margin-top: auto"][style*="border-radius: 18px"][style*="align-items: center"] > div[style*="min-width: 0px"] { flex: 1 1 120px !important; }
+  [style*="margin-top: auto"][style*="border-radius: 18px"][style*="align-items: center"] > button { flex: 1 1 100% !important; justify-content: center !important; }
+  /* big-number fact cards */
+  span[style*="min-width: 120px"] { min-width: 86px !important; font-size: 40px !important; }
+  [style*="repeat(3, minmax(0px, 1fr))"] > [style*="border-radius: 18px"][style*="padding: 16px"] { padding: 12px 8px !important; }
+
+  /* ---------- Shop: filter bar scrolls with the page instead of covering the grid ---------- */
+  section[data-screen-label="02 Toolbar"] { position: static !important; }
+
+  /* ---------- Product page ---------- */
+  [style*="position: sticky"][style*="top: 100px"] { position: static !important; }
+  h1[style*="clamp(56px"] { font-size: 46px !important; line-height: .9 !important; }
+}
