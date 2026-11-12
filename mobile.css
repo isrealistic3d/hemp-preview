@@ -4,6 +4,23 @@
   html { -webkit-text-size-adjust: 100%; }
   input, select, textarea { font-size: 16px !important; } /* stops iOS zooming on focus */
 
+  /* ---------- Display type scale: desktop minimums are too large for a phone ---------- */
+  [style*="font-size: clamp(40px"] { font-size: 34px !important; }
+  [style*="font-size: clamp(44px"], [style*="font-size: 44px"] { font-size: 36px !important; }
+  [style*="font-size: clamp(48px"], [style*="font-size: 48px"] { font-size: 38px !important; }
+  [style*="font-size: clamp(52px"], [style*="font-size: 52px"] { font-size: 40px !important; }
+  [style*="font-size: clamp(56px"], [style*="font-size: 56px"] { font-size: 42px !important; }
+  [style*="font-size: clamp(60px"], [style*="font-size: 60px"] { font-size: 44px !important; }
+  [style*="font-size: clamp(64px"], [style*="font-size: 64px"] { font-size: 46px !important; }
+  [style*="font-size: clamp(72px"], [style*="font-size: 72px"] { font-size: 52px !important; }
+  [style*="font-size: clamp(84px"], [style*="font-size: 84px"] { font-size: 60px !important; }
+  [style*="font-size: clamp(96px"], [style*="font-size: 96px"] { font-size: 68px !important; }
+  [style*="font-size: 130px"] { font-size: 88px !important; }
+  [style*="font-size: clamp(150px"], [style*="font-size: clamp(160px"], [style*="font-size: 150px"] { font-size: 100px !important; }
+  [style*="font-size: 170px"] { font-size: 110px !important; }
+  [style*="font-size: 180px"] { font-size: 120px !important; }
+  [style*="font-size: clamp(220px"] { font-size: 140px !important; }
+
   /* ---------- Shared header ---------- */
   header[style*="sticky"] { padding: 8px 10px !important; }
   header[style*="sticky"] > div { border-radius: 18px !important; }
@@ -14,6 +31,7 @@
 
   /* ---------- Home: scroll hero ---------- */
   section[data-screen-label="01 Hero"] > div { height: 100svh !important; padding: 84px 10px 10px !important; }
+  section[data-screen-label="01 Hero"] > div > div { overflow: clip !important; }
   section[data-screen-label="01 Hero"] [style*="height: 180px"] { left: 20px !important; top: 20px !important; width: calc(100% - 64px) !important; height: 170px !important; }
   section[data-screen-label="01 Hero"] [style*="height: 180px"] [style*="Bebas"] { font-size: 34px !important; }
   section[data-screen-label="01 Hero"] [style*="height: 180px"] [style*="line-height: 1.55"] { font-size: 14px !important; line-height: 1.45 !important; }
@@ -62,9 +80,18 @@
   [style*="repeat(3, minmax(0px, 1fr))"] > [style*="border-radius: 18px"][style*="padding: 16px"] { padding: 12px 8px !important; }
 
   /* ---------- Shop: filter bar scrolls with the page instead of covering the grid ---------- */
-  section[data-screen-label="02 Toolbar"] { position: static !important; }
+  section[data-screen-label="02 Toolbar"],
+  section[data-screen-label="02 Filters"] { position: static !important; }
+  /* stat numbers inside two-up cards */
+  [style*="position: relative"][style*="repeat(2, minmax(0px, 1fr))"] [style*="font-size: 64px"] { font-size: 34px !important; }
 
   /* ---------- Product page ---------- */
   [style*="position: sticky"][style*="top: 100px"] { position: static !important; }
   h1[style*="clamp(56px"] { font-size: 46px !important; line-height: .9 !important; }
+}
+
+/* Tablets (iPad portrait/landscape): the Home hero text column is too narrow between the edge and the product */
+@media (min-width: 641px) and (max-width: 1079px) {
+  section[data-screen-label="01 Hero"] [style*="height: 180px"] { width: min(440px, 52%) !important; }
+  section[data-screen-label="01 Hero"] [style*="max-width: 40%"] { max-width: 36% !important; }
 }
